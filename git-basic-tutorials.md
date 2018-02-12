@@ -3,6 +3,7 @@
 Git là tên gọi của một Hệ thống quản lý phiên bản phân tán (**Distributed Version Control System – DVCS**) là một trong những hệ thống quản lý phiên bản phân tán phổ biến nhất hiện nay. *DVCS* nghĩa là hệ thống giúp mỗi máy tính có thể lưu trữ nhiều phiên bản khác nhau của một mã nguồn được nhân bản (clone) từ một kho chứa mã nguồn (repository), mỗi thay đổi vào mã nguồn trên máy tính sẽ có thể ủy thác (commit) rồi đưa lên máy chủ nơi đặt kho chứa chính. Và một máy tính khác (nếu họ có quyền truy cập) cũng có thể clone lại mã nguồn từ kho chứa hoặc clone lại một tập hợp các thay đổi mới nhất trên máy tính kia.
 # Tại sao phải làm việc với Git và Github
 Trước khi đi vào vấn đề này mình cần nhấn mạnh với các bạn rằng **Git và Github không phải là một** nên đừng đánh đồng chúng. Git là mô hình hệ thống, còn Github là một server phục vụ hệ thống đó, giúp cho chúng ta lưu trữ mã nguồn và tương tác giữa các nhà phát triển trên đó.
+
 Lợi ích mà git và github mang lại rất lớn như: 
 - Cung cấp một không gian lưu trữ mã nguồn.
 - Git dễ sử dụng, an toàn và nhanh chóng. Git rất ít câu lệnh và dễ nhớ.
@@ -14,6 +15,7 @@ Lợi ích mà git và github mang lại rất lớn như:
 ## Cài đặt git trên Windows
 Các bạn tải và cài đặt Git cho Windows theo đường link sau: https://git-scm.com/download/win
 Sau khi cài đặt thành công thì bạn cần cấu hình cơ bản cho git. Để cấu hình bạn có thể sử dụng **Git Bash** hoặc **Windows PowerShell** (mình khuyên dùng PowerShell nhé).
+
 Đầu tiên là cấu hình username mặc định:
 ```
 git config --global user.name "Your name here"
@@ -29,12 +31,14 @@ Việc tạo tài khoản trên github là bước không thể thiếu. Bạn t
 Sau khi tạo tài khoản xong thì đưa thông tin tài khoản (username) cho mình để mình add vào team để có quyền commit lên nhánh master nhé.
 ## Clone project về máy local
 Trước khi clone project về máy thì chúng ta cần xác định thư mục mà các bạn sẽ chứa source code. Các bạn dùng lệnh **cd** để cd đến thư mục mà các bạn muốn làm việc.
+
 Sau đó dùng lệnh sau để clone project về:
 ```
 git clone https://github.com/ptudweb-lab/project
 ```
 ## Thử commit một file bất kì
 Bây giờ bạn có thể commit một file lên, thử tạo một file bất kì trong thư mục chứa project. Ví dụ test.php với nội dung gì tùy bạn.
+
 Sau đó sử dụng lệnh sau để đưa file test.php vào nơi chờ commit
 ```
 git add test.php
@@ -46,6 +50,7 @@ git commit -am "What do you do?"
 Chú ý dòng **"What do you do?"** là dòng comment cho commit cho chúng ta, các bạn hết sức chú ý đến comment này, comment này giúp mọi người hiểu bạn đã làm gì với các dòng code. Các bạn cần làm rõ mình đã làm gì?!!
 ## Push các commit lên remote repository
 Ta cần hiểu github là một remote repository, còn trên máy chúng ta là local repository. Chúng ta chỉnh sửa code trên máy và thực hiện commit thì commit đó chỉ lưu trên local repository chứ chưa đưa lên remote repository nên mọi người chung team sẽ không thấy những thay đổi của bạn.
+
 Để cập nhật lên remote repository thì bạn cần dùng lệnh push:
 ```
 git push origin master
@@ -54,8 +59,10 @@ Giải thích:
 - **origin** là bí danh cho remote repository. Mặc định khi bạn không thiết lập gì khi clone thì nó được đặt origin
 - **master** là tên nhánh (Branch).
 Sau đó git sẽ yêu cầu bạn đăng nhập vào tài khoản github thực hiện push.
+
 ## Pull các thay đổi từ remote repository về máy local
 Một điều hết sức cần các bạn chú ý là trước khi commit hay push lên remote repository thì các bạn cần cập nhật các thay đổi từ remote repository. Để xem có người nào đó chung team có đang viết cùng file mình đang viết hay không. Để tránh sự xung đột.
+
 Để cập nhật các thay đổi trên remote repository thì các bạn cần kéo (pull) các dữ liệu thay đổi từ remote repository về bằng lệnh sau:
 
 ```
