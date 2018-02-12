@@ -12,6 +12,9 @@
 
 # Các modules
 
+# Yêu cầu hệ thống
+- PHP phiên bản 7 trở lên
+- Hỗ trợ PDO class
 # Cài đặt và sử dụng
 
 # Nguồn tham khảo
