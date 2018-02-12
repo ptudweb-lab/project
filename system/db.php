@@ -11,6 +11,7 @@ require_once('db.config.php');
 
 $string = $db['driver'] . ':';
 $string .= 'host=' . $db['host'] . ';';
+$string .= 'dbname=' . $db['dbname'] . ';';
 $string .= 'charset=utf8';
 
 try {
