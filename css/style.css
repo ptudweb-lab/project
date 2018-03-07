@@ -1,0 +1,54 @@
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+.arrow-circle {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    float: left;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    vertical-align: middle;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.arrow {
+    height: 50px;
+    -moz-border-radius: 25px 0px 0px 25px;
+    border-radius: 25px 0px 0px 25px;
+    vertical-align: middle;
+}
+
+.arrow-content {
+    height: 100%;
+    float: none;
+    display: inline-block;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    vertical-align: middle;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.star-checked {
+    color: orange;
+}
+
