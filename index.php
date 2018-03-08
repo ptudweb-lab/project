@@ -11,7 +11,7 @@ require_once('system/head.php');
 ?>
 <div class="row">
             <!-- Danh muc san pham -->
-            <div class="col-4">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                 <div class="list-group">
                     <a href="#" class="list-group-item list-group-item-action">
                         <i class="fas fa-bullhorn"></i> Thông tin 1</a>
@@ -24,7 +24,7 @@ require_once('system/head.php');
                 </div>
             </div>
             <!-- Banner -->
-            <div class="col-8">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <div id="demo" class="carousel slide" data-ride="carousel">
 
                     <!-- Indicators -->
