@@ -75,7 +75,7 @@ require_once('system/head.php');
             </div>
         </div>
         <div class="row list-product">
-            <div class="col-2">
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -100,7 +100,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-            <div class="col-2">
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -125,7 +125,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-            <div class="col-2">
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -150,7 +150,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-            <div class="col-2">
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -175,7 +175,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-            <div class="col-2">
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -200,7 +200,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-            <div class="col-2">
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -249,7 +249,7 @@ require_once('system/head.php');
             </div>
         </div>
         <div class="row list-product">
-            <div class="col-2">
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -274,7 +274,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-            <div class="col-2">
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -299,7 +299,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-            <div class="col-2">
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -324,7 +324,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-            <div class="col-2">
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -349,7 +349,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-            <div class="col-2">
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -374,7 +374,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-            <div class="col-2">
+             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
