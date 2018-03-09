@@ -92,10 +92,10 @@ require_once('system/head.php');
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary text-left" title="Thêm vào giỏ hàng">
+                        <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
                             <i class="fas fa-cart-plus"></i>
                         </a>
-                        <a href="#" class="btn btn-primary text-right">
+                        <a href="#" class="btn btn-primary">
                             Chi tiết
                         </a>
                     </div>
@@ -117,10 +117,10 @@ require_once('system/head.php');
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary text-left" title="Thêm vào giỏ hàng">
+                        <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
                             <i class="fas fa-cart-plus"></i>
                         </a>
-                        <a href="#" class="btn btn-primary text-right">
+                        <a href="#" class="btn btn-primary">
                             Chi tiết
                         </a>
                     </div>
@@ -142,10 +142,10 @@ require_once('system/head.php');
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary text-left" title="Thêm vào giỏ hàng">
+                        <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
                             <i class="fas fa-cart-plus"></i>
                         </a>
-                        <a href="#" class="btn btn-primary text-right">
+                        <a href="#" class="btn btn-primary">
                             Chi tiết
                         </a>
                     </div>
@@ -167,10 +167,10 @@ require_once('system/head.php');
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary text-left" title="Thêm vào giỏ hàng">
+                        <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
                             <i class="fas fa-cart-plus"></i>
                         </a>
-                        <a href="#" class="btn btn-primary text-right">
+                        <a href="#" class="btn btn-primary">
                             Chi tiết
                         </a>
                     </div>
@@ -192,10 +192,10 @@ require_once('system/head.php');
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary text-left" title="Thêm vào giỏ hàng">
+                        <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
                             <i class="fas fa-cart-plus"></i>
                         </a>
-                        <a href="#" class="btn btn-primary text-right">
+                        <a href="#" class="btn btn-primary">
                             Chi tiết
                         </a>
                     </div>
@@ -217,10 +217,10 @@ require_once('system/head.php');
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary text-left" title="Thêm vào giỏ hàng">
+                        <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
                             <i class="fas fa-cart-plus"></i>
                         </a>
-                        <a href="#" class="btn btn-primary text-right">
+                        <a href="#" class="btn btn-primary">
                             Chi tiết
                         </a>
                     </div>
@@ -266,10 +266,10 @@ require_once('system/head.php');
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary text-left" title="Thêm vào giỏ hàng">
+                        <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
                             <i class="fas fa-cart-plus"></i>
                         </a>
-                        <a href="#" class="btn btn-primary text-right">
+                        <a href="#" class="btn btn-primary">
                             Chi tiết
                         </a>
                     </div>
@@ -291,10 +291,10 @@ require_once('system/head.php');
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary text-left" title="Thêm vào giỏ hàng">
+                        <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
                             <i class="fas fa-cart-plus"></i>
                         </a>
-                        <a href="#" class="btn btn-primary text-right">
+                        <a href="#" class="btn btn-primary">
                             Chi tiết
                         </a>
                     </div>
@@ -316,10 +316,10 @@ require_once('system/head.php');
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary text-left" title="Thêm vào giỏ hàng">
+                        <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
                             <i class="fas fa-cart-plus"></i>
                         </a>
-                        <a href="#" class="btn btn-primary text-right">
+                        <a href="#" class="btn btn-primary">
                             Chi tiết
                         </a>
                     </div>
@@ -341,10 +341,10 @@ require_once('system/head.php');
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary text-left" title="Thêm vào giỏ hàng">
+                        <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
                             <i class="fas fa-cart-plus"></i>
                         </a>
-                        <a href="#" class="btn btn-primary text-right">
+                        <a href="#" class="btn btn-primary">
                             Chi tiết
                         </a>
                     </div>
@@ -366,10 +366,10 @@ require_once('system/head.php');
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary text-left" title="Thêm vào giỏ hàng">
+                        <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
                             <i class="fas fa-cart-plus"></i>
                         </a>
-                        <a href="#" class="btn btn-primary text-right">
+                        <a href="#" class="btn btn-primary">
                             Chi tiết
                         </a>
                     </div>
@@ -391,10 +391,10 @@ require_once('system/head.php');
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary text-left" title="Thêm vào giỏ hàng">
+                        <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
                             <i class="fas fa-cart-plus"></i>
                         </a>
-                        <a href="#" class="btn btn-primary text-right">
+                        <a href="#" class="btn btn-primary">
                             Chi tiết
                         </a>
                     </div>
