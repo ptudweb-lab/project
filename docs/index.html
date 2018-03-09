@@ -19,11 +19,37 @@
     <!-- Navigation bar -->
     <div class="container-fluid">
         <nav class="navbar navbar-expand-sm navbar-dark bg-primary p-1" id="navbar">
-            <a href="/" class="navbar-brand">
-                <img src="img/logo.png" alt="FS" class="logo" height="30rem">
-            </a>
             <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0 font-weight-bold">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle btn-primary" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="fas fa-th-list"></i></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item btn-primary" href="#"><i class="fas fa-shopping-cart"></i> Giỏ hàng
+                                <span class="badge badge-light">0</span></a>
+                            <a class="dropdown-item btn-primary" href="#"><i class="fas fa-newspaper"></i> Tin tức</a>
+                            <a class="dropdown-item btn-primary" href="#"><i class="fas fa-gift"></i> Khuyến mãi</a>
+                        </div>
+                    </li>
+                </ul>
 
+                <!--Search form-->
+                <form class="form-inline">
+                    <input class="form-control" size="35" type="text" placeholder="Bạn muốn tìm gì?">
+                    <button title="Tìm kiếm" class="btn btn-success" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+
+
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-xl navbar-dark bg-primary p-1" id="navbar">
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <a href="/" class="navbar-brand">
+                    <img src="img/logo.png" alt="FS" class="logo" height="30rem">
+                </a>
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0 font-weight-bold">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle btn-primary text-white" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
@@ -85,7 +111,8 @@
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox"><span class="text-secondary">Ghi nhớ cho lần đăng nhập sau</span>
+                                    <input class="form-check-input" type="checkbox">
+                                    <span class="text-secondary">Ghi nhớ cho lần đăng nhập sau</span>
                                 </label>
                             </div>
                             <button type="submit" class="btn btn-primary">Đăng nhập</button>
