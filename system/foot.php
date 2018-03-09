@@ -11,7 +11,7 @@ defined('_IN_FS') or die('Error: restricted access');
         <hr/>
         <!-- Footer -->
         <div class="row">
-            <div class="col-4">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                 <dl>
                     <dt> Các chính sách:</dt>
                     <dd>
@@ -25,7 +25,7 @@ defined('_IN_FS') or die('Error: restricted access');
                     </dd>
                 </dl>
             </div>
-            <div class="col-4">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                 <dl>
                     <dt>Thông tin cửa hàng:</dt>
                     <dd>
@@ -36,7 +36,7 @@ defined('_IN_FS') or die('Error: restricted access');
                 </dl>
 
             </div>
-            <div class="col-4">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                 <dl>
                     <dt>Kết nối với chúng tôi:</dt>
                     <dd>
