@@ -9,8 +9,9 @@ define('_IN_FS', 1);
 require_once('system/core.php');
 require_once('system/head.php');
 ?>
-<div class="row">
-            <!-- Danh muc san pham -->
+        <!-- ASide menu -->
+        <div class="row">
+            <!-- Danh muc thong bao -->
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                 <div class="list-group">
                     <a href="#" class="list-group-item list-group-item-action">
@@ -36,14 +37,14 @@ require_once('system/head.php');
                     <!-- The slideshow -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="img/banner/banner-1.jpg" alt="Banner 1" width="100%" height="500px">
+                            <img src="img/banner/banner-1.jpg" class="img-fluid" alt="Banner 1">
                             <div class="carousel-caption">
                                 <h3>Banner 1</h3>
                                 <p>Đây là banner số 1</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="img/banner/banner-2.jpg" alt="Banner 2" width="100%" height="500px">
+                            <img src="img/banner/banner-2.png" class="img-fluid" alt="Banner 2">
                             <div class="carousel-caption">
                                 <h3>Banner 2</h3>
                                 <p>Đây là banner số 2</p>
@@ -67,15 +68,15 @@ require_once('system/head.php');
         <div class="row">
             <div class="col-12">
                 <div class="arrow bg-primary">
-                    <div class="arrow-circle bg-success">
+                    <div class="arrow-circle bg-success p-2">
                         <i class="fas fa-plus-square"></i>
                     </div>
-                    <div class="arrow-content">Sản phẩm mới</div>
+                    <div class="arrow-content p-2">Sản phẩm mới</div>
                 </div>
             </div>
         </div>
         <div class="row list-product">
-             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -100,7 +101,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -125,7 +126,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -150,7 +151,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -175,7 +176,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -200,7 +201,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -230,13 +231,13 @@ require_once('system/head.php');
         <div class="row">
             <div class="col-12">
                 <div class="arrow bg-primary">
-                    <div class="arrow-circle bg-success">
+                    <div class="arrow-circle bg-success p-2">
                         <i class="fas fa-fire"></i>
                     </div>
-                    <div class="arrow-content">
+                    <div class="arrow-content p-2">
                         <div class="btn-group">
                             <span>Sản phẩm bán chạy</span>
-                            <a class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="padding: 0px; margin: 2px;" data-toggle="dropdown">
+                            <a class="btn btn-primary dropdown-toggle dropdown-toggle-split p-0 mb-1 ml-2" data-toggle="dropdown">
                                 <span class="caret"></span>
                             </a>
                             <div class="dropdown-menu">
@@ -249,7 +250,7 @@ require_once('system/head.php');
             </div>
         </div>
         <div class="row list-product">
-             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -274,7 +275,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -299,7 +300,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -324,7 +325,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -349,7 +350,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -374,7 +375,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -400,5 +401,5 @@ require_once('system/head.php');
                 </div>
             </div>
         </div>
-
+        <hr/>
 <?php require_once('system/foot.php'); ?>

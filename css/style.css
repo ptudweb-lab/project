@@ -1,32 +1,20 @@
-.vcenter {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
-}
-
-.vertical-align {
-    display: flex;
-    align-items: center;
-}
 
 .arrow-circle {
-    height: 50px;
-    width: 50px;
+    height: 2.5rem;
+    width: 2.5rem;
     display: inline-block;
-    float: left;
-    -moz-border-radius: 25px;
-    border-radius: 25px;
+    -moz-border-radius: 1.25rem;
+    border-radius: 1.25rem;
     vertical-align: middle;
     text-align: center;
     color: white;
-    padding: 10px;
     font-weight: bold;
 }
 
 .arrow {
-    height: 50px;
-    -moz-border-radius: 25px 0px 0px 25px;
-    border-radius: 25px 0px 0px 25px;
+    height: 2.5rem;
+    -moz-border-radius: 1.25rem 0 0 1.25rem;
+    border-radius: 1.25rem 0 0 1.25rem;
     vertical-align: middle;
 }
 
@@ -36,16 +24,7 @@
     display: inline-block;
     font-weight: bold;
     color: white;
-    padding: 10px;
     vertical-align: middle;
-}
-.fa {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
 }
 
 .star-checked {
@@ -53,5 +32,5 @@
 }
 
 .list-product {
-    padding-left: 25px;
+    padding-left: 1.25rem;
 }

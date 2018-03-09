@@ -18,12 +18,10 @@
     <!-- Header -->
     <!-- Navigation bar -->
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-sm navbar-dark bg-primary" style="padding: 3px;" id="navbar">
-            <!--
-               <a href="/" class="navbar-brand">
-                <img src="img/logo.png" alt="FS" class="logo" height="32px" width="75px">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-primary p-1" id="navbar">
+            <a href="/" class="navbar-brand">
+                <img src="img/logo.png" alt="FS" class="logo" height="30rem">
             </a>
-        -->
             <div class="collapse navbar-collapse" id="collapsibleNavId">
 
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0 font-weight-bold">
@@ -52,7 +50,7 @@
                     <button title="Tìm kiếm" class="btn btn-success" type="submit">
                         <i class="fas fa-search"></i>
                     </button>
-                    <button type="button" formaction="#" class="btn btn-warning" style="margin: 0px 5px 0px 25px;">
+                    <button type="button" formaction="#" class="btn btn-warning ml-3 mr-1">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="badge badge-light">0</span>
                     </button>
@@ -79,18 +77,19 @@
                         <form action="dangnhap.html" method="post">
                             <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input type="email" class="form-control" id="email">
+                                <input type="email" class="form-control" placeholder="Nhập vào email của bạn" id="email">
                             </div>
                             <div class="form-group">
                                 <label for="pwd">Mật khẩu:</label>
-                                <input type="password" class="form-control" id="pwd">
+                                <input type="password" class="form-control" placeholder="Nhập vào mật khẩu tài khoản" id="pwd">
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox"> Ghi nhớ cho lần đăng nhập sau
+                                    <input class="form-check-input" type="checkbox"><span class="text-secondary">Ghi nhớ cho lần đăng nhập sau</span>
                                 </label>
                             </div>
                             <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                            <button type="button" class="btn btn-info" formaction="dangky.html">Đăng ký</button>
                         </form>
                     </div>
 
@@ -162,10 +161,10 @@
         <div class="row">
             <div class="col-12">
                 <div class="arrow bg-primary">
-                    <div class="arrow-circle bg-success">
+                    <div class="arrow-circle bg-success p-2">
                         <i class="fas fa-plus-square"></i>
                     </div>
-                    <div class="arrow-content">Sản phẩm mới</div>
+                    <div class="arrow-content p-2">Sản phẩm mới</div>
                 </div>
             </div>
         </div>
@@ -325,13 +324,13 @@
         <div class="row">
             <div class="col-12">
                 <div class="arrow bg-primary">
-                    <div class="arrow-circle bg-success">
+                    <div class="arrow-circle bg-success p-2">
                         <i class="fas fa-fire"></i>
                     </div>
-                    <div class="arrow-content">
+                    <div class="arrow-content p-2">
                         <div class="btn-group">
                             <span>Sản phẩm bán chạy</span>
-                            <a class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="padding: 0px; margin: 2px;" data-toggle="dropdown">
+                            <a class="btn btn-primary dropdown-toggle dropdown-toggle-split p-0 mb-1 ml-2" data-toggle="dropdown">
                                 <span class="caret"></span>
                             </a>
                             <div class="dropdown-menu">
