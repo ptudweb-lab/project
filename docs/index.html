@@ -17,19 +17,6 @@
 </head>
 
 <body>
-    <script>
-        $(document).ready(function () {
-            $(window).scroll(function () {
-                console.log($(window).scrollTop())
-                if ($(window).scrollTop() > 100) {
-                    $('#navbar').addClass('fixed-top');
-                }
-                if ($(window).scrollTop() < 101) {
-                    $('#navbar').removeClass('fixed-top');
-                }
-            });
-        });
-    </script>
     <!-- Header -->
     <!-- Navigation bar -->
 
@@ -81,7 +68,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto m-0 font-weight-bold">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle btn-se" href="#" id="dropdownIdMobile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle btn-secondary" href="#" id="dropdownIdMobile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-th-list"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownIdMobile">
@@ -102,7 +89,7 @@
             <!--Search form-->
             <form class="form-inline p-0">
                 <input class="form-control-mobile-search" size="15" type="text" placeholder="Bạn muốn tìm gì?">
-                <button title="Tìm kiếm" class="btn btn-secondary" type="submit">
+                <button title="Tìm kiếm" class="btn btn-secondary ml-1 mr-1" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
             </form>
