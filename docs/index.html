@@ -17,6 +17,19 @@
 </head>
 
 <body>
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                console.log($(window).scrollTop())
+                if ($(window).scrollTop() > 100) {
+                    $('#navbar').addClass('fixed-top');
+                }
+                if ($(window).scrollTop() < 101) {
+                    $('#navbar').removeClass('fixed-top');
+                }
+            });
+        });
+    </script>
     <!-- Header -->
     <!-- Navigation bar -->
 
@@ -68,8 +81,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto m-0 font-weight-bold">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle btn-primary" href="#" id="dropdownIdMobile" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
+                    <a class="nav-link dropdown-toggle btn-se" href="#" id="dropdownIdMobile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-th-list"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownIdMobile">
@@ -141,7 +153,7 @@
         <!-- ASide menu -->
         <div class="row">
             <!-- Danh muc san pham -->
-            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            <div class="col-12 col-sm-12 col-md-8 col-lg-8">
                 <div class="list-group">
                     <a href="#" class="list-group-item list-group-item-action">
                         <i class="fas fa-bullhorn"></i> Thông tin 1</a>
@@ -154,7 +166,7 @@
                 </div>
             </div>
             <!-- Banner -->
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
                 <div id="demo" class="carousel slide" data-ride="carousel">
 
                     <!-- Indicators -->
@@ -198,20 +210,20 @@
             <div class="col-12">
                 <div class="arrow bg-primary">
                     <div class="arrow-circle bg-success p-2">
-                        <i class="fas fa-plus-square"></i>
+                        <i class="fas fa-plus-square fa-pulse"></i>
                     </div>
                     <div class="arrow-content p-2">Sản phẩm mới</div>
                 </div>
             </div>
         </div>
         <div class="row list-product">
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
                         <h5 class="card-title">Tên sản phẩm</h5>
                         <p class="card-text">
-                            <span class="fas fa-star fa-pulse star-checked"></span>
+                            <span class="fas fa-star star-checked"></span>
                             <span class="fas fa-star star-checked"></span>
                             <span class="fas fa-star star-checked"></span>
                             <span class="fas fa-star-half star-checked"></span>
@@ -230,7 +242,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -255,7 +267,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -280,7 +292,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -305,7 +317,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -330,7 +342,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -361,7 +373,7 @@
             <div class="col-12">
                 <div class="arrow bg-primary">
                     <div class="arrow-circle bg-success p-2">
-                        <i class="fas fa-fire"></i>
+                        <i class="fas fa-fire fa-pulse"></i>
                     </div>
                     <div class="arrow-content p-2">
                         <div class="btn-group">
@@ -379,7 +391,7 @@
             </div>
         </div>
         <div class="row list-product">
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -404,7 +416,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -429,7 +441,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -454,7 +466,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -479,7 +491,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -504,7 +516,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -533,7 +545,7 @@
         <hr/>
         <!-- Footer -->
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-4">
                 <dl>
                     <dt> Các chính sách:</dt>
                     <dd>
@@ -547,7 +559,7 @@
                     </dd>
                 </dl>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-4">
                 <dl>
                     <dt>Thông tin cửa hàng:</dt>
                     <dd>
@@ -558,7 +570,7 @@
                 </dl>
 
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-4">
                 <dl>
                     <dt>Kết nối với chúng tôi:</dt>
                     <dd>
