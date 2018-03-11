@@ -42,10 +42,11 @@
     -webkit-animation: fa-spin 2s infinite linear;
     animation: fa-spin 2s infinite linear;
 }
+
 .fa-pulse {
     -webkit-animation: fa-spin 1s infinite steps(8);
-            animation: fa-spin 1s infinite steps(8); }
-  
+    animation: fa-spin 1s infinite steps(8);
+}
 
 @-webkit-keyframes fa-spin {
     0% {
@@ -68,51 +69,71 @@
         transform: rotate(360deg);
     }
 }
-    .fa-th-list:before {
-        content: "\f00b";
-    }
-    .fa-newspaper:before {
-        content: "\f1ea";
-    }
-    .fa-gift:before {
-        content: "\f06b";
-    }
-    .fa-search:before {
-        content: "\f002";
-    }
-    .fa-shopping-cart:before {
-        content: "\f07a";
-    }
-    .fa-sign-in-alt:before {
-        content: "\f2f6";
-    }
-    .fa-bullhorn:before {
-        content: "\f0a1";
-    }
-    .fa-plus-square:before {
-        content: "\f0fe";
-    }
-    .fa-star:before {
-        content: "\f005";
-    }
-    .fa-star-half:before {
-        content: "\f089";
-    }
-    .fa-fire:before {
-        content: "\f06d";
-    }
-    .fa-map-marker-alt:before {
-        content: "\f3c5";
-    }
-    .fa-facebook-square:before {
-        content: "\f082";
-    }
-    .fa-twitter-square:before {
-        content: "\f081";
-    }
-    .fa-github-square:before {
-        content: "\f092";
-    }
-    .fa-cart-plus:before {
-        content: "\f217";
-    }
+
+.fa-th-list:before {
+    content: "\f00b";
+}
+
+.fa-newspaper:before {
+    content: "\f1ea";
+}
+
+.fa-gift:before {
+    content: "\f06b";
+}
+
+.fa-search:before {
+    content: "\f002";
+}
+
+.fa-shopping-cart:before {
+    content: "\f07a";
+}
+
+.fa-sign-in-alt:before {
+    content: "\f2f6";
+}
+
+.fa-bullhorn:before {
+    content: "\f0a1";
+}
+
+.fa-plus-square:before {
+    content: "\f0fe";
+}
+
+.fa-star:before {
+    content: "\f005";
+}
+
+.fa-star-half:before {
+    content: "\f089";
+}
+
+.fa-fire:before {
+    content: "\f06d";
+}
+
+.fa-map-marker-alt:before {
+    content: "\f3c5";
+}
+
+.fa-facebook-square:before {
+    content: "\f082";
+}
+
+.fa-twitter-square:before {
+    content: "\f081";
+}
+
+.fa-github-square:before {
+    content: "\f092";
+}
+
+.fa-cart-plus:before {
+    content: "\f217";
+}
+
+.fa-phone:before {
+    content: "\f095";
+}
