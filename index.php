@@ -9,10 +9,11 @@ define('_IN_FS', 1);
 require_once('system/core.php');
 require_once('system/head.php');
 ?>
+    
         <!-- ASide menu -->
         <div class="row">
-            <!-- Danh muc thong bao -->
-            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            <!-- Danh muc san pham -->
+            <div class="col-12 col-sm-12 col-md-8 col-lg-8">
                 <div class="list-group">
                     <a href="#" class="list-group-item list-group-item-action">
                         <i class="fas fa-bullhorn"></i> Thông tin 1</a>
@@ -25,7 +26,7 @@ require_once('system/head.php');
                 </div>
             </div>
             <!-- Banner -->
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
                 <div id="demo" class="carousel slide" data-ride="carousel">
 
                     <!-- Indicators -->
@@ -69,14 +70,39 @@ require_once('system/head.php');
             <div class="col-12">
                 <div class="arrow bg-primary">
                     <div class="arrow-circle bg-success p-2">
-                        <i class="fas fa-plus-square"></i>
+                        <i class="fas fa-plus-square fa-pulse"></i>
                     </div>
                     <div class="arrow-content p-2">Sản phẩm mới</div>
                 </div>
             </div>
         </div>
         <div class="row list-product">
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card">
+                    <img class="card-img-top" src="img/noimage.png" alt="Product title">
+                    <div class="card-body">
+                        <h5 class="card-title">Tên sản phẩm</h5>
+                        <p class="card-text">
+                            <span class="fas fa-star star-checked"></span>
+                            <span class="fas fa-star star-checked"></span>
+                            <span class="fas fa-star star-checked"></span>
+                            <span class="fas fa-star-half star-checked"></span>
+                            <span class="fas fa-star"></span>
+                            </br>
+                            Giá: 0 VNĐ
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
+                            <i class="fas fa-cart-plus"></i>
+                        </a>
+                        <a href="#" class="btn btn-primary">
+                            Chi tiết
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -101,7 +127,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -126,7 +152,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -151,7 +177,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -176,32 +202,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-                <div class="card">
-                    <img class="card-img-top" src="img/noimage.png" alt="Product title">
-                    <div class="card-body">
-                        <h5 class="card-title">Tên sản phẩm</h5>
-                        <p class="card-text">
-                            <span class="fas fa-star star-checked"></span>
-                            <span class="fas fa-star star-checked"></span>
-                            <span class="fas fa-star star-checked"></span>
-                            <span class="fas fa-star"></span>
-                            <span class="fas fa-star"></span>
-                            </br>
-                            Giá: 0 VNĐ
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
-                            <i class="fas fa-cart-plus"></i>
-                        </a>
-                        <a href="#" class="btn btn-primary">
-                            Chi tiết
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -232,7 +233,7 @@ require_once('system/head.php');
             <div class="col-12">
                 <div class="arrow bg-primary">
                     <div class="arrow-circle bg-success p-2">
-                        <i class="fas fa-fire"></i>
+                        <i class="fas fa-fire fa-pulse"></i>
                     </div>
                     <div class="arrow-content p-2">
                         <div class="btn-group">
@@ -250,7 +251,7 @@ require_once('system/head.php');
             </div>
         </div>
         <div class="row list-product">
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -275,7 +276,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -300,7 +301,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -325,7 +326,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -350,7 +351,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -375,7 +376,7 @@ require_once('system/head.php');
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card">
                     <img class="card-img-top" src="img/noimage.png" alt="Product title">
                     <div class="card-body">
@@ -401,5 +402,4 @@ require_once('system/head.php');
                 </div>
             </div>
         </div>
-        <hr/>
 <?php require_once('system/foot.php'); ?>
