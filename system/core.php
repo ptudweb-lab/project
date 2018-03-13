@@ -30,7 +30,7 @@ require_once('db.config.php');
 $string = $dbconf['driver'] . ':';
 $string .= 'host=' . $dbconf['host'] . ';';
 $string .= 'dbname=' . $dbconf['dbname'] . ';';
-$string .= 'charset=utf8';
+$string .= 'charset=utf8mb4';
 
 try {
     $db = new PDO($string, $dbconf['username'], $dbconf['password']);
