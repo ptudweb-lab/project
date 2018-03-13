@@ -20,8 +20,9 @@ spl_autoload_register('autoload');
 function autoload($name)
 {
     $file = ROOTPATH . DIRECTORY_SEPARATOR . 'system' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . $name . '.php';
-    if (file_exists($file))
+    if (file_exists($file)) {
         require_once($file);
+    }
 }
 //Connect to database
 require_once('db.config.php');
@@ -33,7 +34,7 @@ $string .= 'charset=utf8';
 
 try {
     $db = new PDO($string, $dbconf['username'], $dbconf['password']);
-} catch (PDOException  $e ) {
+} catch (PDOException  $e) {
     die('Error: ' . $e);
 }
 
