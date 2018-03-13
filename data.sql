@@ -1,7 +1,7 @@
 CREATE TABLE `users` (
 	`id`  INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`email` varchar(100) NOT NULL UNIQUE,
-	`level` INT(1) UNSIGNED NOT NULL DEFAULT '0';
+	`level` INT(1) UNSIGNED NOT NULL DEFAULT '0',
 	`fullname` varchar(100) NOT NULL,
 	`phone` varchar(11) NOT NULL,
 	`dob`  INT(10) UNSIGNED NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE `users` (
 	`created_time`  INT(10) UNSIGNED NOT NULL,
 	`last_login`  INT(10) UNSIGNED DEFAULT '0',
 	`browser` TEXT NOT NULL,
-	`ip` big INT(10) UNSIGNED NOT NULL DEFAULT '0',
+	`ip` INT(10) UNSIGNED NOT NULL DEFAULT '0',
 	`ip_via_proxy` bigint(11) NOT NULL DEFAULT '0',
 	PRIMARY KEY (`id`)
 );
@@ -75,8 +75,8 @@ CREATE TABLE `bill` (
 	`buyer_phone` varchar(11) NOT NULL,
 	`buyer_email` varchar(100),
 	`comment` varchar(500),
-	`verify` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',,
-	`paid` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',,
+	`verify` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+	`paid` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
 	`browser` TEXT NOT NULL,
 	`ip` bigint(11) NOT NULL DEFAULT '0',
 	`time`  INT(10) UNSIGNED NOT NULL,
@@ -115,8 +115,7 @@ CREATE TABLE `notifications` (
 	`user_id`  INT(10) UNSIGNED NOT NULL,
 	`text` TEXT NOT NULL,
 	`link` tinyint NOT NULL,
-	`read` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',,
-	`time`  INT(10) UNSIGNED NOT NULL,
+	`read` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
 	`time`  INT(10) UNSIGNED NOT NULL,
 	PRIMARY KEY (`id`)
 );
