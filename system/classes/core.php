@@ -7,11 +7,14 @@
 
 defined('_IN_FS') or die('Error: restricted access');
 
-class Core
+class core
 {
     public static $ip;
     public static $ipViaProxy;
     public static $userAgent;
+    public static $isUser = false;
+    public static $user = [];
+    public static $isAdmin = false;
 
     public function __construct()
     {
@@ -34,6 +37,30 @@ class Core
             self::$userAgent = htmlspecialchars(substr(trim($_SERVER['HTTP_USER_AGENT']), 0, 150));
         } else {
             self::$userAgent = 'Not Recognised';
+        }
+
+        $this->authorize();
+    }
+
+    private function authorize()
+    {
+        global $db;
+
+        $user_id = false;
+        $user_ps = false;
+        if (isset($_SESSION['uid']) && isset($_SESSION['ups'])) {
+            // Авторизация по сессии
+            $user_id = abs(intval($_SESSION['uid']));
+            $user_ssid = $_SESSION['ussid'];
+        } elseif (isset($_COOKIE['cuid']) && isset($_COOKIE['cussid'])) {
+            // Авторизация по COOKIE
+            $user_id = abs(intval(base64_decode(trim($_COOKIE['cuid']))));
+            $_SESSION['uid'] = $user_id;
+            $user_ssid = functions::passwordHash(trim($_COOKIE['cussid']));
+            $_SESSION['ussid'] = $user_ssid;
+        }
+        if ($user_id && $user_ssid) {
+            
         }
     }
 }

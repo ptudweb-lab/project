@@ -15,15 +15,6 @@ mb_internal_encoding('UTF-8'); //default encoding
 
 define('ROOTPATH', dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR);
 
-//auto load
-spl_autoload_register('autoload');
-function autoload($name)
-{
-    $file = ROOTPATH . DIRECTORY_SEPARATOR . 'system' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . $name . '.php';
-    if (file_exists($file)) {
-        require_once($file);
-    }
-}
 //Connect to database
 require_once('db.config.php');
 
@@ -35,7 +26,17 @@ $string .= 'charset=utf8mb4';
 try {
     $db = new PDO($string, $dbconf['username'], $dbconf['password']);
 } catch (PDOException  $e) {
-    die('Error: ' . $e);
+    die('Error: ' . $e->getMessage());
+}
+
+//auto load
+spl_autoload_register('autoload');
+function autoload($name)
+{
+    $file = ROOTPATH . DIRECTORY_SEPARATOR . 'system' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . $name . '.php';
+    if (file_exists($file)) {
+        require_once($file);
+    }
 }
 
 new core();
@@ -57,6 +58,11 @@ $stmt = $db->query('SELECT * FROM `settings`');
 while (($row = $stmt->fetch()) !== false) {
     $set[$row['name']] = $row['value'];
 }
+
+//User
+$isUser = core::$isUser;
+$user = core::$user;
+$isAdmin = core::$isAdmin;
 
 @ini_set('zlib.output_compression_level', 3);
 //ob_start('ob_gzhandler');
