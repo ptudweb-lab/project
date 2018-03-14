@@ -23,7 +23,12 @@ defined('_IN_FS') or die('Error: restricted access');
         <script language="javascript" src="js/popper.min.js"></script>
         <script language="javascript" src="js/bootstrap.min.js"></script>
         <script language="javascript" src="js/myScript.js"></script>
-        <title>Cửa hàng FS</title>
+        <meta name="description" content="<?= $set['meta_description'] ?>">
+        <meta name="keywords" content="<?= $set['meta_keywords'] ?>">
+        <meta name="author" content="FS">
+        <title>
+            <?= $set['sitename'] ?>
+        </title>
     </head>
 
     <body>

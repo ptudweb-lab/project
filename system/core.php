@@ -51,6 +51,13 @@ $userAgent = core::$userAgent;
 $id = isset($_REQUEST['id']) ? abs(intval($_REQUEST['id'])) : false;
 $page = isset($_REQUEST['page']) && $_REQUEST['page'] > 0 ? intval($_REQUEST['page']) : 1;
 
+//set to setting variable
+$set = [];
+$stmt = $db->query('SELECT * FROM `settings`');
+while (($row = $stmt->fetch()) !== false) {
+    $set[$row['name']] = $row['value'];
+}
+
 @ini_set('zlib.output_compression_level', 3);
 //ob_start('ob_gzhandler');
 ob_start();
