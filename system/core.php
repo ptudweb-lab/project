@@ -23,8 +23,14 @@ $string .= 'host=' . $dbconf['host'] . ';';
 $string .= 'dbname=' . $dbconf['dbname'] . ';';
 $string .= 'charset=utf8mb4';
 
+$opt = [
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    //PDO::ATTR_EMULATE_PREPARES   => false,
+];
+
 try {
-    $db = new PDO($string, $dbconf['username'], $dbconf['password']);
+    $db = new PDO($string, $dbconf['username'], $dbconf['password'], $opt);
 } catch (PDOException  $e) {
     die('Error: ' . $e->getMessage());
 }
@@ -58,6 +64,8 @@ $stmt = $db->query('SELECT * FROM `settings`');
 while (($row = $stmt->fetch()) !== false) {
     $set[$row['name']] = $row['value'];
 }
+
+$homeurl = $set['siteurl'] ? $set['siteurl'] : 'http://' . $_SERVER['hostname'];
 
 //User
 $isUser = core::$isUser;

@@ -21,5 +21,8 @@ class functions
         return password_verify($text, $hash);
     }
 
-
+    
+    public static function display_error($message) {
+        return '<div class="alert alert-danger"><i class="fas fa-times-circle "></i> ' . $message . '</div>';
+    }
 }

@@ -6,6 +6,10 @@
 * Version: VERSION.txt
 */
 defined('_IN_FS') or die('Error: restricted access');
+$title = isset($title) ? $title : $set['sitename'];
+$meta_description = isset($meta_description) ? $meta_description : $set['meta_description'];
+$meta_keywords = isset($meta_keywords) ? $meta_keywords : $set['meta_keywords'];
+
 ?>
 
     <!DOCTYPE html>
@@ -15,19 +19,19 @@ defined('_IN_FS') or die('Error: restricted access');
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/fontawesome-fixed.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="<?= $homeurl ?>/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="<?= $homeurl ?>/css/fontawesome-fixed.css">
+        <link rel="stylesheet" type="text/css" href="<?= $homeurl ?>/css/style.css">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-        <script language="javascript" src="js/jquery.min.js"></script>
-        <script language="javascript" src="js/popper.min.js"></script>
-        <script language="javascript" src="js/bootstrap.min.js"></script>
-        <script language="javascript" src="js/myScript.js"></script>
-        <meta name="description" content="<?= $set['meta_description'] ?>">
-        <meta name="keywords" content="<?= $set['meta_keywords'] ?>">
+        <script language="javascript" src="<?= $homeurl ?>/js/jquery.min.js"></script>
+        <script language="javascript" src="<?= $homeurl ?>/js/popper.min.js"></script>
+        <script language="javascript" src="<?= $homeurl ?>/js/bootstrap.min.js"></script>
+        <script language="javascript" src="<?= $homeurl ?>/js/myScript.js"></script>
+        <meta name="description" content="<?= $meta_description ?>">
+        <meta name="keywords" content="<?= $meta_keywords ?>">
         <meta name="author" content="FS">
         <title>
-            <?= $set['sitename'] ?>
+            <?= $title ?>
         </title>
     </head>
 
@@ -37,12 +41,12 @@ defined('_IN_FS') or die('Error: restricted access');
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-0" id="navbar">
             <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <a href="/" class="navbar-brand">
-                    <img src="img/logo.png" alt="FS" class="logo" height="30rem">
+                <a href="<?= $homeurl ?>" class="navbar-brand">
+                    <img src="<?= $homeurl ?>/img/logo.png" alt="FS" class="logo" height="30rem">
                 </a>
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0 font-weight-bold">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle btn-primary text-white" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+                        <a class="nav-link btn-primary text-white" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             <i class="fas fa-th-list"></i> Danh mục sản phẩm</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownId">
@@ -83,7 +87,7 @@ defined('_IN_FS') or die('Error: restricted access');
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav mr-auto m-0 font-weight-bold">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle btn-secondary" href="#" id="dropdownIdMobile" data-toggle="dropdown" aria-haspopup="true"
+                        <a class="nav-link btn-secondary" href="#" id="dropdownIdMobile" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             <i class="fas fa-th-list"></i>
                         </a>
