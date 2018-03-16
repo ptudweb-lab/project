@@ -94,6 +94,10 @@
     content: "\f2f6";
 }
 
+.fa-user-plus:before {
+    content: "\f234";
+}
+
 .fa-bullhorn:before {
     content: "\f0a1";
 }
@@ -136,4 +140,54 @@
 
 .fa-phone:before {
     content: "\f095";
+}
+
+.fa-address-book:before {
+    content: "\f2b9";
+}
+
+.fa-venus-mars:before {
+    content: "\f228";
+}
+
+.fa-cogs:before {
+    content: "\f085";
+}
+
+.fa-cog:before {
+    content: "\f013";
+}
+
+.fa-shopping-basket:before {
+    content: "\f291";
+}
+
+.fa-times-circle:before {
+    content: "\f057";
+}
+
+.fa-id-card:before {
+    content: "\f2c2";
+}
+
+.fa-at:before {
+    content: "\f1fa";
+}
+
+.fa-calendar-alt:before {
+    content: "\f073";
+}
+
+.fa-key:before {
+    content: "\f084";
+}
+
+
+
+.fa-mars:before {
+    content: "\f222";
+}
+
+.fa-venus:before {
+    content: "\f221";
 }
