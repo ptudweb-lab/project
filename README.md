@@ -1,4 +1,4 @@
-# Đề tài: Cửa hàng "FS"
+# Tên đề tài: Cửa hàng "FS"
 # Giới thiệu
 ## Mục tiêu của project
 Đây là project của môn học Phát triển ứng dụng Web - UIT. Nội dung là tạo một trang web cho một cửa hàng bất kì (sản phẩm không biết trước, tùy chủ cửa hàng setup)
@@ -16,6 +16,9 @@ Trang web phải đảm bảo được các mục tiêu:
 | 3  | Trần Quang Hải| 15520190@gm.uit.edu.vn |
 | 4  | Đoàn Văn Hải  | 15520180@gm.uit.edu.vn |
 
+#Các công nghệ sử dụng trong project
+- Front-end: Bootstrap + Jquery
+- Back-end: PDO classes, SPL auto load
 # Các modules
 - Quản lý cửa hàng (thêm, sửa, xóa thông tin) dành cho người bán:
   + Người dùng: chỉnh sửa thông tin, thay đổi mật khẩu, ban hành lệnh cấm với người dùng, giải quyết khiếu nại của người dùng.
