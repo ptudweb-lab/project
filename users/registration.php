@@ -93,35 +93,35 @@ if (isset($_POST['submit'])) {
                         <div class="form-row">
                             <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
                                 <label for="fullname"><i class="fas fa-id-card"></i> Họ Tên: </label>
-                                <input type="text" class="form-control" name="fullname" placeholder="Nhập họ và tên" title="Họ tên từ 6 kí tự đến 100 kí tự" value="<?= $fullname ?>">
-                                <?php if (isset($error['fullname'])) echo functions::display_error($error['fullname']); ?>
+                                <input type="text" class="form-control" name="fullname" placeholder="Nhập họ và tên" title="Họ tên từ 6 kí tự đến 100 kí tự" value="<?= isset($fullname) ? $fullname : '' ?>">
+                                <?= isset($error['fullname']) ? functions::display_error($error['fullname']) : '' ?>
                             </div>
                             <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
                                 <label for="email">
                                     <i class="fas fa-at"></i> Email:</label>
-                                <input type="email" name="email" class="form-control" placeholder="Nhập địa chỉ email của bạn" value="<?= $email ?>">
-                                <?php if (isset($error['email'])) echo functions::display_error($error['email']); ?>
+                                <input type="email" name="email" class="form-control" placeholder="Nhập địa chỉ email của bạn" value="<?= isset($email) ? $email : '' ?>">
+                                <?= isset($error['email']) ? functions::display_error($error['email']) : '' ?>
                             </div>
                             <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
                                 <div>
                                 <label for="sex"><i class="fas fa-venus-mars"></i> Giới tính: </label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="sex" value="m" <?php if ($sex == 'm') echo 'checked'; ?>>
+                                    <input class="form-check-input" type="radio" name="sex" value="m" <?= isset($sex) && ($sex == 'm') ?  'checked' : '' ?>>
                                     <label class="form-check-label" for="sex"> Nam</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="sex" value="f" <?php if ($sex == 'f') echo 'checked'; ?>>
+                                    <input class="form-check-input" type="radio" name="sex" value="f" <?= isset($sex) && ($sex == 'f') ?  'checked' : '' ?>>
                                     <label class="form-check-label" for="sex"> Nữ</label>
                                 </div>
-                                <?php if (isset($error['sex'])) echo functions::display_error($error['sex']); ?>
+                                <?= isset($error['sex']) ? functions::display_error($error['sex']) : '' ?>
                             </div>
 
                             <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
                                 <label for="dob">
                                     <i class="fas fa-calendar-alt"></i> Ngày sinh:</label>
-                                <input type="date" name="dob" class="form-control" value="<?= date('Y-m-d', $dob) ?>">
-                                <?php if (isset($error['dob'])) echo functions::display_error($error['dob']); ?>
+                                <input type="date" name="dob" class="form-control" value="<?= isset($dob) ? date('Y-m-d', $dob) : '' ?>">
+                                <?= isset($error['dob']) ? functions::display_error($error['dob']) : '' ?>
                             </div>
                             <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
                                 <label for="passwd">
