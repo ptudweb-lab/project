@@ -16,7 +16,7 @@ Trang web phải đảm bảo được các mục tiêu:
 | 3  | Trần Quang Hải| 15520190@gm.uit.edu.vn |
 | 4  | Đoàn Văn Hải  | 15520180@gm.uit.edu.vn |
 
-#Các công nghệ sử dụng trong project
+# Các công nghệ sử dụng trong project
 - Front-end: Bootstrap + Jquery
 - Back-end: PDO classes, SPL auto load
 # Các modules
