@@ -132,11 +132,11 @@ $meta_keywords = isset($meta_keywords) ? $meta_keywords : $set['meta_keywords'];
                         <form action="dangnhap.html" method="post">
                             <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input type="email" class="form-control" placeholder="Nhập vào email của bạn" id="email">
+                                <input type="email" class="form-control" placeholder="Nhập email của bạn" id="email">
                             </div>
                             <div class="form-group">
                                 <label for="pwd">Mật khẩu:</label>
-                                <input type="password" class="form-control" placeholder="Nhập vào mật khẩu tài khoản" id="pwd">
+                                <input type="password" class="form-control" placeholder="Nhập mật khẩu tài khoản" id="pwd">
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
