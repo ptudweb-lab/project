@@ -61,7 +61,7 @@ class core
             $stmt->execute(['id' => $user_id]);
             if ($stmt->fetchColumn() == 1) {
                 $user = $stmt->fetch();
-                if (funcions::passwordVerify($user_ssid, $user['session_id'])) {
+                if (auth::passwordVerify($user_ssid, $user['session_id'])) {
                     self::$user = $user;
                     self::$isUser = true;
                     if ($user['level'] == 1) {

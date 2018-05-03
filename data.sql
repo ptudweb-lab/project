@@ -1,43 +1,4 @@
-CREATE TABLE `users` (
-	`id`  INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-	`email` varchar(100) NOT NULL UNIQUE,
-	`level` INT(1) UNSIGNED NOT NULL DEFAULT '0',
-	`fullname` varchar(100) NOT NULL,
-	`phone` varchar(11) NOT NULL,
-	`dob`  INT(10) UNSIGNED NOT NULL,
-	`sex` varchar(1) NOT NULL,
-	`address` varchar(300) NOT NULL,
-	`session_id` varchar(256),
-	`password` varchar(256) NOT NULL,
-	`created_time`  INT(10) UNSIGNED NOT NULL,
-	`last_login`  INT(10) UNSIGNED DEFAULT '0',
-	`failed_login` INT(1) UNSIGNED DEFAULT '0',
-	`browser` TEXT NOT NULL,
-	`ip` INT(10) UNSIGNED NOT NULL DEFAULT '0',
-	`ip_via_proxy` bigint(11) NOT NULL DEFAULT '0',
-	PRIMARY KEY (`id`)
-);
-
-CREATE TABLE `product` (
-	`id`  INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-	`cat_id`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
-	`name` varchar(100) NOT NULL,
-	`description` TEXT NOT NULL,
-	`price_first`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
-	`price_last`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
-	`time`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
-	`rate`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
-	`buy_count`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
-	PRIMARY KEY (`id`)
-);
-
-CREATE TABLE `product_cat` (
-	`id`  INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-	`name` varchar(100) NOT NULL,
-	`parent_id`  INT(10) UNSIGNED,
-	PRIMARY KEY (`id`)
-);
-
+DROP TABLE IF EXISTS `product_rate`;
 CREATE TABLE `product_rate` (
 	`id`  INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`rate_value`  INT(10) UNSIGNED NOT NULL,
@@ -50,6 +11,7 @@ CREATE TABLE `product_rate` (
 	PRIMARY KEY (`id`)
 );
 
+DROP TABLE IF EXISTS `product_question`;
 CREATE TABLE `product_question` (
 	`id`  INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`product_id`  INT(10) UNSIGNED NOT NULL,
@@ -61,12 +23,14 @@ CREATE TABLE `product_question` (
 	PRIMARY KEY (`id`)
 );
 
+DROP TABLE IF EXISTS `settings`;
 CREATE TABLE `settings` (
 	`name` varchar(25) NOT NULL,
 	`value` varchar(200) NOT NULL,
 	PRIMARY KEY (`name`)
 );
 
+DROP TABLE IF EXISTS `bill`;
 CREATE TABLE `bill` (
 	`id`  INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`user_id`  INT(10) UNSIGNED DEFAULT '0',
@@ -85,6 +49,7 @@ CREATE TABLE `bill` (
 	PRIMARY KEY (`id`)
 );
 
+DROP TABLE IF EXISTS `shop_banner`;
 CREATE TABLE `shop_banner` (
 	`id`  INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`img_link` tinytext NOT NULL,
@@ -94,6 +59,7 @@ CREATE TABLE `shop_banner` (
 	PRIMARY KEY (`id`)
 );
 
+DROP TABLE IF EXISTS `article`;
 CREATE TABLE `article` (
 	`id`  INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`text` TEXT NOT NULL,
@@ -102,6 +68,7 @@ CREATE TABLE `article` (
 	PRIMARY KEY (`id`)
 );
 
+DROP TABLE IF EXISTS `discount_code`;
 CREATE TABLE `discount_code` (
 	`id`  INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`code` varchar(50) NOT NULL,
@@ -112,6 +79,7 @@ CREATE TABLE `discount_code` (
 	PRIMARY KEY (`id`)
 );
 
+DROP TABLE IF EXISTS `notifications`;
 CREATE TABLE `notifications` (
 	`id`  INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`user_id`  INT(10) UNSIGNED NOT NULL,
@@ -119,6 +87,48 @@ CREATE TABLE `notifications` (
 	`link` tinyint NOT NULL,
 	`read` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
 	`time`  INT(10) UNSIGNED NOT NULL,
+	PRIMARY KEY (`id`)
+);
+
+DROP TABLE IF EXISTS `product`;
+CREATE TABLE `product` (
+	`id`  INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`cat_id`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
+	`name` varchar(100) NOT NULL,
+	`description` TEXT NOT NULL,
+	`price_first`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
+	`price_last`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
+	`time`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
+	`rate`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
+	`buy_count`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
+	PRIMARY KEY (`id`)
+);
+
+DROP TABLE IF EXISTS `product_cat`;
+CREATE TABLE `product_cat` (
+	`id`  INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`name` varchar(100) NOT NULL,
+	`parent_id`  INT(10) UNSIGNED,
+	PRIMARY KEY (`id`)
+);
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+	`id`  INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`email` varchar(100) NOT NULL UNIQUE,
+	`level` INT(1) UNSIGNED NOT NULL DEFAULT '0',
+	`fullname` varchar(100) NOT NULL,
+	`phone` varchar(11) NOT NULL,
+	`sex` varchar(1) NOT NULL,
+	`address` varchar(300) NOT NULL,
+	`session_id` varchar(256),
+	`password` varchar(256) NOT NULL,
+	`created_time`  INT(10) UNSIGNED NOT NULL,
+	`last_login`  INT(10) UNSIGNED DEFAULT '0',
+	`failed_login` INT(1) UNSIGNED DEFAULT '0',
+	`browser` TEXT NOT NULL,
+	`ip` INT(10) UNSIGNED NOT NULL DEFAULT '0',
+	`ip_via_proxy` bigint(11) DEFAULT '0',
 	PRIMARY KEY (`id`)
 );
 
