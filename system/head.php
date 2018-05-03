@@ -155,13 +155,13 @@ $meta_keywords = isset($meta_keywords) ? $meta_keywords : $set['meta_keywords'];
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox">
+                                    <input class="form-check-input" type="checkbox" name="rem">
                                     <span class="text-secondary">Ghi nhớ cho lần đăng nhập sau</span>
                                 </label>
                             </div>
                             <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
                             <button type="submit" class="btn btn-primary" name="submit">Đăng nhập</button>
-                            <button type="button" class="btn btn-info" formaction="<?= $homeurl ?>/users/registration.php">Đăng ký</button>
+                            <button type="submit" class="btn btn-info" formaction="<?= $homeurl ?>/users/registration.php">Đăng ký</button>
                         </form>
                     </div>
 
