@@ -8,7 +8,6 @@
 define('_IN_FS', 1);
 require_once('../system/core.php');
 require_once('../system/head.php');
-//die(auth::passwordHash('test'));
 if (isset($_POST['submit'])) {
     $error = []; //contain error messages
 

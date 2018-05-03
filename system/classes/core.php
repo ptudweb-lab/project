@@ -37,17 +37,17 @@ class core
         } else {
             self::$userAgent = 'Not Recognised';
         }
-        $this->authorize();
         $this->sessionStart();
+        $this->authorize();
     }
 
     private function authorize()
     {
         global $db;
-
         $user_id = false;
         $user_ssid = false;
-        if (isset($_SESSION['uid']) && isset($_SESSION['ups'])) {
+        
+        if (isset($_SESSION['uid']) && isset($_SESSION['ussid'])) {
             $user_id = abs(intval($_SESSION['uid']));
             $user_ssid = $_SESSION['ussid'];
         } elseif (isset($_COOKIE['cuid']) && isset($_COOKIE['cussid'])) {
@@ -57,22 +57,31 @@ class core
             $_SESSION['ussid'] = $user_ssid;
         }
         if ($user_id && $user_ssid) {
-            $stmt = $db->prepare('SELECT * FROM `users` WHERE `failed_login` <= 3 AND `id` = :id');
-            $stmt->execute(['id' => $user_id]);
-            if ($stmt->fetchColumn() == 1) {
+            try {
+                $stmt = $db->prepare('SELECT * FROM `users` WHERE `failed_login` <= 3 AND `id` = :id');
+                $stmt->execute(['id' => $user_id]);
                 $user = $stmt->fetch();
-                if (auth::passwordVerify($user_ssid, $user['session_id'])) {
-                    self::$user = $user;
-                    self::$isUser = true;
-                    if ($user['level'] == 1) {
-                        self::$isAdmin = true;
+                
+                if ($user) {
+                    if (auth::passwordVerify($user_ssid, $user['session_id'])) {
+                        self::$user = $user;
+                        self::$isUser = true;
+                        
+                        if ($user['level'] == 1) {
+                            self::$isAdmin = true;
+                        }
+                    } else {
+                        $this->unsetUser();
                     }
                 } else {
                     $this->unsetUser();
                 }
-            } else {
-                $this->unsetUser();
+            } catch (PDOException $e) {
+                echo 'Exception -> ';
+                var_dump($e->getMessage());
+                exit();
             }
+            
         }
     }
 

@@ -9,7 +9,7 @@ defined('_IN_FS') or die('Error: restricted access');
 $title = isset($title) ? $title : $set['sitename'];
 $meta_description = isset($meta_description) ? $meta_description : $set['meta_description'];
 $meta_keywords = isset($meta_keywords) ? $meta_keywords : $set['meta_keywords'];
-
+//var_dump($_SESSION);
 ?>
 
     <!DOCTYPE html>
@@ -74,9 +74,14 @@ $meta_keywords = isset($meta_keywords) ? $meta_keywords : $set['meta_keywords'];
                         <i class="fas fa-shopping-cart"></i>
                         <span class="badge badge-light">0</span>
                     </button>
-
-                    <button type="button" class="btn btn-info text-right" data-toggle="modal" data-target="#loginForm">
-                        <i class="fas fa-sign-in-alt"></i> Đăng nhập</button>
+                    <?php 
+                        if ($isUser) {
+                            echo '<button type="button" class="btn btn-info text-right" data-toggle="modal" data-target="#userModal"><i class="fas fa-sign-in-alt"></i> Tài khoản</button>';
+                        } else {
+                            echo '<button type="button" class="btn btn-info text-right" data-toggle="modal" data-target="#loginForm"><i class="fas fa-sign-in-alt"></i> Đăng nhập</button>';
+                        }
+                    ?>
+                    
                 </form>
 
 
@@ -92,8 +97,14 @@ $meta_keywords = isset($meta_keywords) ? $meta_keywords : $set['meta_keywords'];
                             <i class="fas fa-th-list"></i>
                         </a>
                         <div class="dropdown-menu w-100" aria-labelledby="dropdownIdMobile">
-                            <a class="dropdown-item btn-primary" href="#">
-                                <i class="fas fa-sign-in-alt"></i> Đăng nhập</a>
+                        <?php 
+                            if ($isUser) {
+                                echo '<a class="dropdown-item btn-primary" href="' . $homeurl . '/users"><i class="fas fa-sign-in-alt"></i> Tài khoản</a>';
+                            } else {
+                                echo '<a class="dropdown-item btn-primary" href="' . $homeurl . '/users/login.php"><i class="fas fa-sign-in-alt"></i> Đăng nhập</a>';
+                            }
+                        ?>
+                            
                             <a class="dropdown-item btn-primary" href="#">
                                 <i class="fas fa-shopping-cart"></i> Giỏ hàng
                                 <span class="badge badge-light">0</span>
@@ -118,6 +129,10 @@ $meta_keywords = isset($meta_keywords) ? $meta_keywords : $set['meta_keywords'];
             </div>
         </nav>
         <!-- The Modal Login Form -->
+        <?php if (!$isUser) { 
+            if (isset($headmod) && $headmod != 'login')
+                $_SESSION['token'] = auth::genToken(35);
+        ?>
         <div class="modal fade" id="loginForm">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -129,14 +144,14 @@ $meta_keywords = isset($meta_keywords) ? $meta_keywords : $set['meta_keywords'];
 
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <form action="dangnhap.html" method="post">
+                        <form action="<?= $homeurl ?>/users/login.php" method="post">
                             <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input type="email" class="form-control" placeholder="Nhập email của bạn" id="email">
+                                <input type="email" class="form-control" placeholder="Nhập email của bạn" name="email">
                             </div>
                             <div class="form-group">
-                                <label for="pwd">Mật khẩu:</label>
-                                <input type="password" class="form-control" placeholder="Nhập mật khẩu tài khoản" id="pwd">
+                                <label for="passwd">Mật khẩu:</label>
+                                <input type="password" class="form-control" placeholder="Nhập mật khẩu tài khoản" name="passwd">
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
@@ -144,8 +159,9 @@ $meta_keywords = isset($meta_keywords) ? $meta_keywords : $set['meta_keywords'];
                                     <span class="text-secondary">Ghi nhớ cho lần đăng nhập sau</span>
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-primary">Đăng nhập</button>
-                            <button type="button" class="btn btn-info" formaction="dangky.html">Đăng ký</button>
+                            <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
+                            <button type="submit" class="btn btn-primary" name="submit">Đăng nhập</button>
+                            <button type="button" class="btn btn-info" formaction="<?= $homeurl ?>/users/registration.php">Đăng ký</button>
                         </form>
                     </div>
 
@@ -156,4 +172,27 @@ $meta_keywords = isset($meta_keywords) ? $meta_keywords : $set['meta_keywords'];
                 </div>
             </div>
         </div>
+        <?php } else { ?>
+            <div class="modal fade" id="userModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Quản lí tài khoản cá nhân</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                       Chưa có thông tin hiển thị
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php } ?>
         <div class="container-fluid">

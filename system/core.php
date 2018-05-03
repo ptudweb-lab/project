@@ -18,10 +18,10 @@ define('ROOTPATH', dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR);
 //Connect to database
 require_once('db.config.php');
 
-$string = $dbconf['driver'] . ':';
-$string .= 'host=' . $dbconf['host'] . ';';
-$string .= 'dbname=' . $dbconf['dbname'] . ';';
-$string .= 'charset=utf8mb4';
+$dbInfo = $dbconf['driver'] . ':';
+$dbInfo .= 'host=' . $dbconf['host'] . ';';
+$dbInfo .= 'dbname=' . $dbconf['dbname'] . ';';
+$dbInfo .= 'charset=utf8mb4';
 
 $opt = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
@@ -30,7 +30,7 @@ $opt = [
 ];
 
 try {
-    $db = new PDO($string, $dbconf['username'], $dbconf['password'], $opt);
+    $db = new PDO($dbInfo, $dbconf['username'], $dbconf['password'], $opt);
 } catch (PDOException  $e) {
     die('Error: ' . $e->getMessage());
 }
