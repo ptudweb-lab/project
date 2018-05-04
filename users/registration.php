@@ -8,10 +8,20 @@
 define('_IN_FS', 1);
 require_once('../system/core.php');
 require_once('../system/head.php');
+
+$fullname = isset($_POST['fullname']) ? trim($_POST['fullname']) : false;
+$email = isset($_POST['email']) ? trim($_POST['email']) : false;
+$token = isset($_POST['token']) ? trim($_POST['token']) : false;
+$sex = isset($_POST['sex']) ? trim($_POST['sex']) : false;
+$passwd = isset($_POST['passwd']) ? trim($_POST['passwd']) : false;
+$repasswd = isset($_POST['repasswd']) ? trim($_POST['repasswd']) : false;
+$phone = isset($_POST['phone']) ? trim($_POST['phone']) : false;
+$address = isset($_POST['address']) ? trim($_POST['address']) : false;
+
 if (isset($_POST['submit'])) {
     $error = []; //contain error messages
 
-    $fullname = isset($_POST['fullname']) ? trim($_POST['fullname']) : false;
+    
     if (!$fullname) {
         $error['fullname'] = 'Trường họ tên không được để trống';
     } else {
@@ -23,12 +33,12 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    $token = isset($_POST['token']) ? trim($_POST['token']) : false;
+    
     if (!$token || strcmp($token, $_SESSION['token']) != 0) {
         $error['token'] = 'Phiên đăng ký không hợp lệ';
     }
 
-    $email = isset($_POST['email']) ? trim($_POST['email']) : false;
+    
     if (!$email || empty($email)) {
         $error['email'] = 'Email không được bỏ trống';
     } else {
@@ -46,7 +56,7 @@ if (isset($_POST['submit'])) {
         }
     }
    
-    $sex = isset($_POST['sex']) ? trim($_POST['sex']) : false;
+    
     if (!$sex) {
         $error['sex'] = 'Vui lòng chọn giới tính Nam hoặc Nữ';
     } else {
@@ -89,8 +99,7 @@ if (isset($_POST['submit'])) {
         }
     } */
 
-    $passwd = isset($_POST['passwd']) ? trim($_POST['passwd']) : false;
-    $repasswd = isset($_POST['repasswd']) ? trim($_POST['repasswd']) : false;
+    
     if (!$passwd) {
         $error['passwd'] = 'Không được để trống mật khẩu';
         if ($repasswd) {
@@ -109,7 +118,6 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    $phone = isset($_POST['phone']) ? trim($_POST['phone']) : false;
     if (!$phone) {
         $error['phone'] = 'SĐT không được để trống';
     } else {
@@ -121,7 +129,6 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    $address = isset($_POST['address']) ? trim($_POST['address']) : false;
     if (!$address) {
         $error['address'] = 'Không được để trống phần địa chỉ';
     } else {
