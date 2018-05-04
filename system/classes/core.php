@@ -61,7 +61,6 @@ class core
                 $stmt = $db->prepare('SELECT * FROM `users` WHERE `failed_login` <= 3 AND `id` = :id');
                 $stmt->execute(['id' => $user_id]);
                 $user = $stmt->fetch();
-                
                 if ($user) {
                     if (auth::passwordVerify($user_ssid, $user['session_id'])) {
                         self::$user = $user;
@@ -85,12 +84,20 @@ class core
         }
     }
 
-    private function unsetUser()
+    public function unsetUser()
     {
-        unset($_SESSION['uid']);
-        unset($_SESSION['ussid']);
-        setcookie('cuid', '');
-        setcookie('cussid', '');
+        try {
+            //echo 'unsetUser() run';
+            unset($_SESSION['uid']);
+            unset($_SESSION['ussid']);
+            setcookie('cuid', '', null, '/');
+            setcookie('cussid', '', null, '/');
+        } catch (Exception $e) {
+            echo 'Exception -> ';
+            var_dump($e->getMessage());
+            exit();
+        }
+        
     }
 
     private function sessionStart() {

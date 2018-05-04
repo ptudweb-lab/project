@@ -10,6 +10,7 @@ defined('_IN_FS') or die('Error: restricted access');
 ini_set('session.use_trans_sid', '0');
 ini_set('arg_separator.output', '&amp;');
 ini_set('display_errors', 'On');
+ini_set('session.cookie_httponly', 1);
 date_default_timezone_set('Asia/Ho_Chi_Minh'); //default time zone
 mb_internal_encoding('UTF-8'); //default encoding
 

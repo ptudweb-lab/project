@@ -9,8 +9,8 @@ defined('_IN_FS') or die('Error: restricted access');
 
 $dbconf = [
     'driver' => 'mysql', //driver SQL as: mysql, sqlite,...
-    'host' => '10.129.53.187',
-    'username' => 'tuanlh',
-    'password' => '123456789',
-    'dbname' => 'sampledb' //database name
+    'host' => 'localhost',
+    'username' => 'root',
+    'password' => '',
+    'dbname' => 'fss' //database name
 ];

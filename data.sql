@@ -9,7 +9,9 @@ CREATE TABLE `product_rate` (
 	`browser` TEXT NOT NULL,
 	`ip` bigint(11) NOT NULL DEFAULT '0',
 	PRIMARY KEY (`id`)
-);
+)
+  ENGINE = MyISAM
+  DEFAULT CHARSET = utf8mb4;
 
 DROP TABLE IF EXISTS `product_question`;
 CREATE TABLE `product_question` (
@@ -21,14 +23,18 @@ CREATE TABLE `product_question` (
 	`browser` TEXT NOT NULL,
 	`ip` bigint(11) NOT NULL DEFAULT '0',
 	PRIMARY KEY (`id`)
-);
+)
+  ENGINE = MyISAM
+  DEFAULT CHARSET = utf8mb4;
 
 DROP TABLE IF EXISTS `settings`;
 CREATE TABLE `settings` (
 	`name` varchar(25) NOT NULL,
 	`value` varchar(200) NOT NULL,
 	PRIMARY KEY (`name`)
-);
+)
+  ENGINE = MyISAM
+  DEFAULT CHARSET = utf8mb4;
 
 DROP TABLE IF EXISTS `bill`;
 CREATE TABLE `bill` (
@@ -47,7 +53,9 @@ CREATE TABLE `bill` (
 	`ip` bigint(11) NOT NULL DEFAULT '0',
 	`time`  INT(10) UNSIGNED NOT NULL,
 	PRIMARY KEY (`id`)
-);
+)
+  ENGINE = MyISAM
+  DEFAULT CHARSET = utf8mb4;
 
 DROP TABLE IF EXISTS `shop_banner`;
 CREATE TABLE `shop_banner` (
@@ -57,7 +65,9 @@ CREATE TABLE `shop_banner` (
 	`expire`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
 	`time`  INT(10) UNSIGNED NOT NULL,
 	PRIMARY KEY (`id`)
-);
+)
+  ENGINE = MyISAM
+  DEFAULT CHARSET = utf8mb4;
 
 DROP TABLE IF EXISTS `article`;
 CREATE TABLE `article` (
@@ -66,7 +76,9 @@ CREATE TABLE `article` (
 	`time`  INT(10) UNSIGNED NOT NULL,
 	`expire`  INT(10) UNSIGNED DEFAULT '0',
 	PRIMARY KEY (`id`)
-);
+)
+  ENGINE = MyISAM
+  DEFAULT CHARSET = utf8mb4;
 
 DROP TABLE IF EXISTS `discount_code`;
 CREATE TABLE `discount_code` (
@@ -77,7 +89,9 @@ CREATE TABLE `discount_code` (
 	`discount`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
 	`expire`  INT(10) UNSIGNED DEFAULT '0',
 	PRIMARY KEY (`id`)
-);
+)
+  ENGINE = MyISAM
+  DEFAULT CHARSET = utf8mb4;
 
 DROP TABLE IF EXISTS `notifications`;
 CREATE TABLE `notifications` (
@@ -88,7 +102,9 @@ CREATE TABLE `notifications` (
 	`read` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
 	`time`  INT(10) UNSIGNED NOT NULL,
 	PRIMARY KEY (`id`)
-);
+)
+  ENGINE = MyISAM
+  DEFAULT CHARSET = utf8mb4;
 
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
@@ -102,7 +118,9 @@ CREATE TABLE `product` (
 	`rate`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
 	`buy_count`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
 	PRIMARY KEY (`id`)
-);
+)
+  ENGINE = MyISAM
+  DEFAULT CHARSET = utf8mb4;
 
 DROP TABLE IF EXISTS `product_cat`;
 CREATE TABLE `product_cat` (
@@ -110,7 +128,9 @@ CREATE TABLE `product_cat` (
 	`name` varchar(100) NOT NULL,
 	`parent_id`  INT(10) UNSIGNED,
 	PRIMARY KEY (`id`)
-);
+)
+  ENGINE = MyISAM
+  DEFAULT CHARSET = utf8mb4;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
@@ -130,7 +150,9 @@ CREATE TABLE `users` (
 	`ip` INT(10) UNSIGNED NOT NULL DEFAULT '0',
 	`ip_via_proxy` bigint(11) DEFAULT '0',
 	PRIMARY KEY (`id`)
-);
+)
+  ENGINE = MyISAM
+  DEFAULT CHARSET = utf8mb4;
 
 ALTER TABLE `product` ADD CONSTRAINT `product_fk0` FOREIGN KEY (`cat_id`) REFERENCES `product_cat`(`id`);
 

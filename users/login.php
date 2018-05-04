@@ -54,11 +54,17 @@ if (isset($_POST['submit'])) {
                     
                     if (isset($_POST['rem'])) {
                         $timeCookieExpired = time() + 3600*24*30*6; //saved cookie expired after 6 months
-                        setcookie('cuid', base64_encode($row['id']), $timeCookieExpired); 
-                        setcookie('cussid', $ssid, $timeCookieExpired);
+                        setcookie('cuid', base64_encode($row['id']), $timeCookieExpired, '/', null, null, true); 
+                        setcookie('cussid', $ssid, $timeCookieExpired, '/', null, null, true);
+                        //die(var_dump($_COOKIE));
                     }
 
-                    $urlRedirect = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : $homeurl;
+                    $urlRedirect = $homeurl;
+                    if (isset($_SERVER['HTTP_REFERER'])) {
+                        if (strcmp($_SERVER['HTTP_REFERER'], $homeurl . $_SERVER['REQUEST_URI']) != 0) {
+                            $urlRedirect = $_SERVER['HTTP_REFERER'];
+                        }
+                    }
                     echo '<div class="alert alert-success">Chúc mừng bạn đã đăng nhập thành công tài khoản!</div>';
                     header('Location: ' . $urlRedirect);
                     require_once('../system/foot.php');
@@ -89,7 +95,7 @@ $_SESSION['token'] = auth::genToken(35);
         <div class="card">
             <div class="card-header">
                 <span class="font-weight-bold">
-                    <i class="fas fa-user-plus"></i> Đăng ký tài khoản</span>
+                    <i class="fas fa-user-plus"></i> Đăng nhập tài khoản</span>
             </div>
             <div class="card-body">
                 <form action="#" method="post">
