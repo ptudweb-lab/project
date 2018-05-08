@@ -13,7 +13,7 @@ class auth
     {
         $options = [
             'cost' => 10,
-            'salt' => random_bytes(22),
+            //'salt' => random_bytes(22),
         ];
         return password_hash($text, PASSWORD_BCRYPT, $options);
     }
