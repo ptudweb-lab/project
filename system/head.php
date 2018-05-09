@@ -9,7 +9,18 @@ defined('_IN_FS') or die('Error: restricted access');
 $title = isset($title) ? $title : $set['sitename'];
 $meta_description = isset($meta_description) ? $meta_description : $set['meta_description'];
 $meta_keywords = isset($meta_keywords) ? $meta_keywords : $set['meta_keywords'];
-//var_dump($_SESSION);
+
+//load category
+$show_cat = '';
+$stmt = $db->query("SELECT * FROM `product_cat`;");
+if ($stmt->rowCount()) {
+    while ($row = $stmt->fetch()) {
+        $show_cat .= '<a class="dropdown-item btn-primary" href="' . $row['id'] . '">' . $row['name'] . '</a>';
+    }
+} else {
+    $show_cat = 'Danh mục rỗng';
+}
+
 ?>
 
     <!DOCTYPE html>
@@ -50,8 +61,7 @@ $meta_keywords = isset($meta_keywords) ? $meta_keywords : $set['meta_keywords'];
                             aria-expanded="false">
                             <i class="fas fa-th-list"></i> Danh mục sản phẩm</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item btn-primary" href="#">Danh mục 1</a>
-                            <a class="dropdown-item btn-primary" href="#">Danh mục 2</a>
+                            <?= $show_cat ?>
                         </div>
                     </li>
                     <li class="nav-item">

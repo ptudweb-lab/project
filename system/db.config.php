@@ -12,5 +12,5 @@ $dbconf = [
     'host' => 'localhost',
     'username' => 'root',
     'password' => '',
-    'dbname' => 'fss' //database name
+    'dbname' => 'fs' //database name
 ];
