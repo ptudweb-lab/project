@@ -9,7 +9,7 @@ defined('_IN_FS') or die('Error: restricted access');
 $title = isset($title) ? $title : $set['sitename'];
 $meta_description = isset($meta_description) ? $meta_description : $set['meta_description'];
 $meta_keywords = isset($meta_keywords) ? $meta_keywords : $set['meta_keywords'];
-
+$script = isset($script) ? '<script language="javascript" src="' . $script . '"></script>' : '';
 //load category
 $show_cat = '';
 $stmt = $db->query("SELECT * FROM `product_cat`;");
@@ -38,6 +38,7 @@ if ($stmt->rowCount()) {
         <script language="javascript" src="<?= $homeurl ?>/js/popper.min.js"></script>
         <script language="javascript" src="<?= $homeurl ?>/js/bootstrap.min.js"></script>
         <script language="javascript" src="<?= $homeurl ?>/js/myScript.js"></script>
+        <?= $script ?>
         <meta name="description" content="<?= $meta_description ?>">
         <meta name="keywords" content="<?= $meta_keywords ?>">
         <meta name="author" content="FS">

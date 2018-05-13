@@ -8,6 +8,10 @@
 define('_IN_FS', 1);
 require_once('../../system/core.php');
 if ($isAdmin) {
+    
+    if (!isset($_SERVER['HTTP_REFERER']) || ($_SERVER['HTTP_REFERER'] != $homeurl . '/admin/')) {
+        die ('Not regconize');
+    }
     $name = isset($_POST['name']) ? trim($_POST['name']) : false;
     $token = isset($_POST['token']) ? trim($_POST['token']) : false;
     if (isset($_POST['submit'])) {
@@ -21,7 +25,7 @@ if ($isAdmin) {
         }
     
         if (!$token || strcmp($token, $_SESSION['token']) != 0) {
-            $error['token'] = 'Phiên đăng ký không hợp lệ';
+            $error['token'] = 'Phiên chứng thực không hợp lệ';
         }
 
         if (count($error) < 1) {
@@ -37,7 +41,7 @@ if ($isAdmin) {
                 echo 'Exception -> ';
                 var_dump($e->getMessage());
             }
-            
+            header('Location: ' . $_SERVER['HTTP_REFERER'] . '#category');
             echo '<div class="alert alert-success">Đã thêm danh mục thành công</div>';    
         }
     }
