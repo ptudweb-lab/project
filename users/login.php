@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
     $error = []; //contain error messages
 
     $token = isset($_POST['token']) ? trim($_POST['token']) : false;
-    if (!$token || strcmp($token, $_SESSION['token']) != 0) {
+    if (!$token || !isset($_SESSION['token']) || strcmp($token, $_SESSION['token']) != 0) {
         $error['token'] = 'Phiên đăng nhập không hợp lệ';
     }
 

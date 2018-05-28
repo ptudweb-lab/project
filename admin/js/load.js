@@ -6,6 +6,8 @@ $(document).ready(function () {
         
         $("#result").load(url);
         
+    } else {
+        load('general');
     }
 
 });
