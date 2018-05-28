@@ -154,17 +154,6 @@ CREATE TABLE `users` (
   ENGINE = MyISAM
   DEFAULT CHARSET = utf8mb4;
 
-ALTER TABLE `product` ADD CONSTRAINT `product_fk0` FOREIGN KEY (`cat_id`) REFERENCES `product_cat`(`id`);
-
-ALTER TABLE `product_rate` ADD CONSTRAINT `product_rate_fk0` FOREIGN KEY (`product_id`) REFERENCES `product`(`id`);
-
-ALTER TABLE `product_rate` ADD CONSTRAINT `product_rate_fk1` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`);
-
-ALTER TABLE `product_question` ADD CONSTRAINT `product_question_fk0` FOREIGN KEY (`product_id`) REFERENCES `product`(`id`);
-
-ALTER TABLE `product_question` ADD CONSTRAINT `product_question_fk1` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`);
-
-ALTER TABLE `notifications` ADD CONSTRAINT `notifications_fk0` FOREIGN KEY (`time`) REFERENCES `users`(`id`);
 
 INSERT INTO `settings` (name, value) VALUES 
 ('sitename', 'FSS Store'),
