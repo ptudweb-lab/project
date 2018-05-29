@@ -5,15 +5,8 @@
 * Author: github.com/ptudweb-lab/project
 * Version: VERSION.txt
 */
-define('_IN_FS', 1);
-require_once('../../system/core.php');
-if ($isAdmin) {
-    
-    if (!isset($_SERVER['HTTP_REFERER']) || ($_SERVER['HTTP_REFERER'] != $homeurl . '/admin/')) {
-        die ('Not regconize');
-    }
+defined('_IN_FS') or die('Error: restricted access');
 
-    
     $post = [];
     $post['sitename'] = isset($_POST['name']) ? trim($_POST['name']) : $set['sitename'];
     $post['siteurl'] = isset($_POST['url']) ? trim($_POST['url']) : $set['siteurl'];
@@ -70,7 +63,7 @@ if ($isAdmin) {
                 echo 'Exception -> ';
                 var_dump($e->getMessage());
             }
-            header('Location: ' . $_SERVER['HTTP_REFERER'] . '#general');
+            //header('Location: ' . $_SERVER['HTTP_REFERER'] . '#general');
             echo '<div class="alert alert-success">Đã cập nhật thông tin thành công</div>';    
         }
     }
@@ -81,7 +74,7 @@ if ($isAdmin) {
     }
     
     $_SESSION['token'] = auth::genToken(35);
-    ?>
+?>
 
 <div class="card">
     <div class="card-header">
@@ -90,7 +83,7 @@ if ($isAdmin) {
     <div class="card-body">
         <div class="row">
             <div class="col-12">
-                <form action="modules/general.php" method="post">
+                <form action="#" method="post">
                     <div class="form-row">
                         <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
                             <label for="name">Tên trang web:</label>
@@ -126,8 +119,3 @@ if ($isAdmin) {
         </div>
     </div>
 </div>
-<?php
-} else {
-    echo functions::display_error('Khu vực này chỉ dành cho quản trị viên');
-}
-?>
