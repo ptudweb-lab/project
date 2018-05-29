@@ -1,0 +1,26 @@
+{include file="../../tpl/header.html"}
+<div class="row m-2">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <span class="font-weight-bold">
+                    <i class="fas fa-user-plus"></i> Đăng xuất tài khoản</span>
+            </div>
+            <div class="card-body">
+                <form action="#" method="post">
+                    <div class="form-row">
+                        <div class="form-group">
+                            Bạn có muốn đăng xuất không?
+                        </div>
+                    </div>
+                    <input type="hidden" name="token" value="{$token}">
+                    {if isset($error.token)} {$error.token} {/if}
+                    <button type="submit" name="submit" class="btn btn-success">Có</button>
+                    <button type="submit" class="btn btn-success" formtarget="{$homeurl}">Không</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{include file="../../tpl/footer.html"}

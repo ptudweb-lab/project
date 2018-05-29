@@ -46,6 +46,16 @@ function autoload($name)
     }
 }
 
+require_once(ROOTPATH . DIRECTORY_SEPARATOR . 'system' . DIRECTORY_SEPARATOR . 'libs' . DIRECTORY_SEPARATOR . 'Smarty.class.php');
+$tpl = new Smarty;
+
+//Template
+$tpl->debugging = true;
+$tpl->caching = false;
+$tpl->cache_lifetime = 120;
+$tpl->setTemplateDir('tpl');
+$tpl->setCompileDir('tpl_c');
+
 new core();
 
 //get IP of client
@@ -72,6 +82,35 @@ $homeurl = $set['siteurl'] ? $set['siteurl'] : 'http://' . $_SERVER['hostname'];
 $isUser = core::$isUser;
 $user = core::$user;
 $isAdmin = core::$isAdmin;
+
+$tpl->assign('homeurl', $homeurl);
+$tpl->assign('user', $user);
+$tpl->assign('is_user', $isUser);
+$tpl->assign('is_admin', $isAdmin);
+$tpl->assign('title', (isset($title) ? $title : $set['sitename']));
+$tpl->assign('meta_description', (isset($meta_description) ? $meta_description : $set['meta_description']));
+$tpl->assign('meta_keywords', (isset($meta_keywords) ? $meta_keywords : $set['meta_keywords']));
+
+
+if ((!isset($headmod) || $headmod != 'login') && !$isUser) {
+    $_SESSION['token_login'] = auth::genToken(35);
+    $tpl->assign('token_login', $_SESSION['token_login']);
+}
+
+
+//$script = isset($script) ? '<script language="javascript" src="' . $script . '"></script>' : '';
+//load category for header
+$show_cat = '';
+$stmt = $db->query("SELECT * FROM `product_cat`;");
+if ($stmt->rowCount()) {
+    while ($row = $stmt->fetch()) {
+        $show_cat .= '<a class="dropdown-item btn-primary" href="' . $row['id'] . '">' . $row['name'] . '</a>';
+    }
+} else {
+    $show_cat = 'Danh mục rỗng';
+}
+
+$tpl->assign('show_cat', $show_cat);
 
 @ini_set('zlib.output_compression_level', 3);
 //ob_start('ob_gzhandler');
