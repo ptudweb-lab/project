@@ -112,11 +112,14 @@ CREATE TABLE `product` (
 	`cat_id`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
 	`name` varchar(100) NOT NULL,
 	`description` TEXT NOT NULL,
+	`short_desc` VARCHAR(500),
+	`image` varchar(100) NOT NULL,
 	`price_first`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
 	`price_last`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
 	`time`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
 	`rate`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
 	`buy_count`  INT(10) UNSIGNED NOT NULL DEFAULT '0',
+	`available`  INT(1) UNSIGNED NOT NULL DEFAULT '1',
 	PRIMARY KEY (`id`)
 )
   ENGINE = MyISAM
@@ -161,4 +164,5 @@ INSERT INTO `settings` (name, value) VALUES
 ('meta_description', 'Đây là cửa hàng FS - mang đến những điều tiện lợi, nhanh chóng, an toàn và thân thiện cho người mua'),
 ('meta_keywords', 'fs, shop, store, ecommerce, php, mysql');
 
-
+INSERT INTO `users` (`id`, `email`, `level`, `fullname`, `phone`, `sex`, `address`, `session_id`, `password`, `created_time`, `last_login`, `failed_login`, `browser`, `ip`, `ip_via_proxy`) VALUES
+(1, 'arituan@gmail.com', 1, 'Lê Hoàng Tuấn', '0123456789', 'm', 'km20 Xa lộ Hà nội, Khu phố 6, phường Linh Trung, quận Thủ Đức,Tp.HCM', '$2y$10$rOQEsMuZWG14SRNm.ATfA.IOBIgKijiE3wksR3VMGIQClpFi8t3ti', '$2y$10$paSm3brlg3jrbjeB4qt/2e2uh7reQRsE93cEKaSoHcDR05MiVTHIG', 1525321059, 1527636963, 0, 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36', 2130706433, NULL);

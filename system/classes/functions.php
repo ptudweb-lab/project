@@ -18,7 +18,7 @@ class functions
     public static function display_error_tpl($message) {
         $out = [];
         foreach ($message as $key => $val) {
-            $out[$key] = '<div class="alert alert-danger"><i class="fas fa-times-circle "></i> ' . $val . '</div>';
+            $out[$key] = '<div class="text-danger"><i class="fas fa-times-circle "></i> ' . $val . '</div>';
         }
         return $out;
     }

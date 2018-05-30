@@ -65,7 +65,7 @@ if (isset($_POST['submit'])) {
         }
         $tpl->assign('updated', true);
     } else {
-        $tpl->assign('error', $error);
+        $tpl->assign('error', functions::display_error_tpl($error));
     }
 }
 

@@ -65,157 +65,41 @@
         </div>
     </div>
 </div>
+
 <div class="row list-product">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+    {if not isset($new_list_product)}
+    <div class="alert">Danh sách hiện tại rỗng</div>
+    {else} {foreach $new_list_product as $product}
+    <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
         <div class="card">
-            <img class="card-img-top" src="img/noimage.png" alt="Product title">
+            <img class="card-img-top" src="{$homeurl}/uploads/{$product.image}" alt="Product title">
             <div class="card-body">
-                <h5 class="card-title">Tên sản phẩm</h5>
+                <h5 class="card-title">{$product.name}</h5>
                 <p class="card-text">
                     <span class="fas fa-star star-checked"></span>
                     <span class="fas fa-star star-checked"></span>
                     <span class="fas fa-star star-checked"></span>
                     <span class="fas fa-star-half star-checked"></span>
                     <span class="fas fa-star"></span>
-                    </br>
-                    Giá: 0 VNĐ
+                    <br/> Giá:
+                    <span class="text-danger">{$product.price_last}</span> VNĐ
+                    <br/>
+                    <strike>{$product.price_first} VNĐ</strike>
+
                 </p>
             </div>
             <div class="card-footer">
                 <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
                     <i class="fas fa-cart-plus"></i>
                 </a>
-                <a href="#" class="btn btn-primary">
+
+                <a href="{$homeurl}/product/index.php?id={$product.id}" class="btn btn-primary float-right">
                     Chi tiết
                 </a>
             </div>
         </div>
     </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div class="card">
-            <img class="card-img-top" src="img/noimage.png" alt="Product title">
-            <div class="card-body">
-                <h5 class="card-title">Tên sản phẩm</h5>
-                <p class="card-text">
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star"></span>
-                    <span class="fas fa-star"></span>
-                    </br>
-                    Giá: 0 VNĐ
-                </p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
-                    <i class="fas fa-cart-plus"></i>
-                </a>
-                <a href="#" class="btn btn-primary">
-                    Chi tiết
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div class="card">
-            <img class="card-img-top" src="img/noimage.png" alt="Product title">
-            <div class="card-body">
-                <h5 class="card-title">Tên sản phẩm</h5>
-                <p class="card-text">
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star"></span>
-                    <span class="fas fa-star"></span>
-                    </br>
-                    Giá: 0 VNĐ
-                </p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
-                    <i class="fas fa-cart-plus"></i>
-                </a>
-                <a href="#" class="btn btn-primary">
-                    Chi tiết
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div class="card">
-            <img class="card-img-top" src="img/noimage.png" alt="Product title">
-            <div class="card-body">
-                <h5 class="card-title">Tên sản phẩm</h5>
-                <p class="card-text">
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star"></span>
-                    <span class="fas fa-star"></span>
-                    </br>
-                    Giá: 0 VNĐ
-                </p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
-                    <i class="fas fa-cart-plus"></i>
-                </a>
-                <a href="#" class="btn btn-primary">
-                    Chi tiết
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div class="card">
-            <img class="card-img-top" src="img/noimage.png" alt="Product title">
-            <div class="card-body">
-                <h5 class="card-title">Tên sản phẩm</h5>
-                <p class="card-text">
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star"></span>
-                    <span class="fas fa-star"></span>
-                    </br>
-                    Giá: 0 VNĐ
-                </p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
-                    <i class="fas fa-cart-plus"></i>
-                </a>
-                <a href="#" class="btn btn-primary">
-                    Chi tiết
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div class="card">
-            <img class="card-img-top" src="img/noimage.png" alt="Product title">
-            <div class="card-body">
-                <h5 class="card-title">Tên sản phẩm</h5>
-                <p class="card-text">
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star"></span>
-                    <span class="fas fa-star"></span>
-                    </br>
-                    Giá: 0 VNĐ
-                </p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
-                    <i class="fas fa-cart-plus"></i>
-                </a>
-                <a href="#" class="btn btn-primary">
-                    Chi tiết
-                </a>
-            </div>
-        </div>
-    </div>
+    {/foreach} {/if}
 </div>
 <hr/>
 <div class="row">
@@ -239,157 +123,40 @@
         </div>
     </div>
 </div>
-<div class="row list-product">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div class="card">
-            <img class="card-img-top" src="img/noimage.png" alt="Product title">
-            <div class="card-body">
-                <h5 class="card-title">Tên sản phẩm</h5>
-                <p class="card-text">
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star"></span>
-                    <span class="fas fa-star"></span>
-                    </br>
-                    Giá: 0 VNĐ
-                </p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
-                    <i class="fas fa-cart-plus"></i>
-                </a>
-                <a href="#" class="btn btn-primary">
-                    Chi tiết
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div class="card">
-            <img class="card-img-top" src="img/noimage.png" alt="Product title">
-            <div class="card-body">
-                <h5 class="card-title">Tên sản phẩm</h5>
-                <p class="card-text">
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star"></span>
-                    <span class="fas fa-star"></span>
-                    </br>
-                    Giá: 0 VNĐ
-                </p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
-                    <i class="fas fa-cart-plus"></i>
-                </a>
-                <a href="#" class="btn btn-primary">
-                    Chi tiết
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div class="card">
-            <img class="card-img-top" src="img/noimage.png" alt="Product title">
-            <div class="card-body">
-                <h5 class="card-title">Tên sản phẩm</h5>
-                <p class="card-text">
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star"></span>
-                    <span class="fas fa-star"></span>
-                    </br>
-                    Giá: 0 VNĐ
-                </p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
-                    <i class="fas fa-cart-plus"></i>
-                </a>
-                <a href="#" class="btn btn-primary">
-                    Chi tiết
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div class="card">
-            <img class="card-img-top" src="img/noimage.png" alt="Product title">
-            <div class="card-body">
-                <h5 class="card-title">Tên sản phẩm</h5>
-                <p class="card-text">
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star"></span>
-                    <span class="fas fa-star"></span>
-                    </br>
-                    Giá: 0 VNĐ
-                </p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
-                    <i class="fas fa-cart-plus"></i>
-                </a>
-                <a href="#" class="btn btn-primary">
-                    Chi tiết
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div class="card">
-            <img class="card-img-top" src="img/noimage.png" alt="Product title">
-            <div class="card-body">
-                <h5 class="card-title">Tên sản phẩm</h5>
-                <p class="card-text">
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star"></span>
-                    <span class="fas fa-star"></span>
-                    </br>
-                    Giá: 0 VNĐ
-                </p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
-                    <i class="fas fa-cart-plus"></i>
-                </a>
-                <a href="#" class="btn btn-primary">
-                    Chi tiết
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <div class="card">
-            <img class="card-img-top" src="img/noimage.png" alt="Product title">
-            <div class="card-body">
-                <h5 class="card-title">Tên sản phẩm</h5>
-                <p class="card-text">
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star star-checked"></span>
-                    <span class="fas fa-star"></span>
-                    <span class="fas fa-star"></span>
-                    </br>
-                    Giá: 0 VNĐ
-                </p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
-                    <i class="fas fa-cart-plus"></i>
-                </a>
-                <a href="#" class="btn btn-primary">
-                    Chi tiết
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
 
+<div class="row list-product">
+    {if not isset($top_list_product)}
+    <div class="alert">Danh sách hiện tại rỗng</div>
+    {else} {foreach $top_list_product as $product}
+    <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+        <div class="card">
+            <img class="card-img-top" src="{$homeurl}/uploads/{$product.image}" alt="Product title">
+            <div class="card-body">
+                <h5 class="card-title">{$product.name}</h5>
+                <p class="card-text">
+                    <span class="fas fa-star star-checked"></span>
+                    <span class="fas fa-star star-checked"></span>
+                    <span class="fas fa-star star-checked"></span>
+                    <span class="fas fa-star-half star-checked"></span>
+                    <span class="fas fa-star"></span>
+                    <br/> Giá:
+                    <span class="text-danger">{$product.price_last}</span> VNĐ
+                    <br/>
+                    <strike>{$product.price_first} VNĐ</strike>
+
+                </p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
+                    <i class="fas fa-cart-plus"></i>
+                </a>
+
+                <a href="{$homeurl}/product/index.php?id={$product.id}" class="btn btn-primary float-right">
+                    Chi tiết
+                </a>
+            </div>
+        </div>
+    </div>
+    {/foreach} {/if}
+</div>
 {include file="footer.html"}

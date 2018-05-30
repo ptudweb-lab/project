@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
         }
         $tpl->assign('updated', true);
     } else {
-        $tpl->assign('error', $error);
+        $tpl->assign('error', functions::display_error_tpl($error));
     }
 }
 
@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
 if (isset($_SESSION['token'])) {
     unset($_SESSION['token']);
 }
-    
+
 $_SESSION['token'] = auth::genToken(35);
 
 $tpl->assign('token', $_SESSION['token']);

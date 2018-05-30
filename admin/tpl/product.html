@@ -1,0 +1,69 @@
+<div class="card mb-4">
+    <div class="card-header">
+        <span class="font-weight-bold">Thêm sản phẩm</span>
+    </div>
+    <div class="card-body pt-2 pb-2">
+        <div class="row">
+            <div class="col-12">
+                {if isset($updated)}
+                <div class="alert alert-success">Đã thêm sản phẩm thành công</div>
+                {/if}
+                <form action="#" method="post" enctype="multipart/form-data">
+                    <div class="form-row">
+                        <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <label for="name"><span class="text-danger">*</span> Tên sản phẩm: </label>
+                            <input type="text" name="name" class="form-control {if isset($error.name)} alert-danger {/if}" placeholder="Nhập tên sản phẩm" value="{$name}">
+                            {if isset($error.name)} {$error.name} {/if}
+                        </div>
+
+                        <div class="form-group col-sm-12 col-md-12 col-lg-3 col-xl-3">
+                            <label for="fprice"><span class="text-danger">*</span> Giá thị trường: </label>
+                            <input type="text" name="fprice" class="form-control {if isset($error.fprice)} alert-danger {/if}" placeholder="Giá gốc (giá thị trường)" value="{$fprice}">
+                            {if isset($error.fprice)} {$error.fprice} {/if}
+                        </div>
+
+                        <div class="form-group col-sm-12 col-md-12 col-lg-3 col-xl-3">
+                            <label for="lprice"><span class="text-danger">*</span> Giá kinh doanh: </label>
+                            <input type="text" name="lprice" class="form-control {if isset($error.lprice)} alert-danger {/if}" placeholder="Giá bán cho khách hàng" value="{$lprice}">
+                            {if isset($error.lprice)} {$error.lprice} {/if}
+                        </div>
+
+                        <div class="form-group col-12">
+                            <label for="cat_id"><span class="text-danger">*</span> Thuộc danh mục: </label>
+                            <select name="cat_id" class="form-control {if isset($error.cat_id)} alert-danger {/if}">
+                                {$cats}
+                            </select>
+                            {if isset($error.cat_id)} {$error.cat_id} {/if}
+                        </div>
+
+                        <div class="form-group col-12">
+                            <label for="name">Mô tả ngắn gọn cho sản phẩm (tính năng): </label>
+                            <textarea name="short_description" rows="5" class="form-control {if isset($error.short_description)} alert-danger {/if}">{$short_description}</textarea>
+                            <small class="form-text text-muted">Đây là phần mô tả ngắn gọn cho sản phẩm, hãy liệt kê tính năng sản phẩm theo từng dòng</small>
+                            {if isset($error.short_description)} {$error.short_description} {/if}
+                        </div>
+
+                        <div class="form-group col-12">
+                            <label for="name"><span class="text-danger">*</span> Mô tả chi tiết sản phẩm: </label>
+                            <textarea name="description" rows="10" class="form-control {if isset($error.description)} alert-danger {/if}">{$description}</textarea>
+                            <small class="form-text text-muted">Đây là phần mô tả cho sản phẩm</small>
+                            {if isset($error.description)} {$error.description} {/if}
+                        </div>
+
+                        <div class="form-group col-12">
+                            <label for="lprice"><span class="text-danger">*</span> Ảnh chụp sản phẩm (ảnh đại diện): </label>
+                            <input type="file" name="image" class="form-control" accept="image/*">
+                            {if isset($error.upload)} {$error.upload} {/if}
+                        </div>
+            
+                        <div class="form-group col-12">
+                            <input type="hidden" name="token" value="{$token}">
+                            {if isset($error.token)} {$error.token} {/if}
+                            <button type="submit" name="submit" class="btn btn-success">Thêm</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
