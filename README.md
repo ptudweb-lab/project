@@ -9,16 +9,17 @@ Trang web phải đảm bảo được các mục tiêu:
 - Giao diện đơn giản, load nhanh.
 ## Các thành viên tham gia project
 
-| STT| Họ tên        | Email                  |
-|:--:|---------------|------------------------|
-| 1  | Lê Hoàng Tuấn | arituan@gmail.comn     |
-| 2  | Đặng Hồng Sơn | 15520728@gm.uit.edu.vn |
-| 3  | Trần Quang Hải| 15520190@gm.uit.edu.vn |
-| 4  | Đoàn Văn Hải  | 15520180@gm.uit.edu.vn |
+| STT| Họ tên         | Email                  |
+|:--:|----------------|------------------------|
+| 1  | Lê Hoàng Tuấn  | arituan@gmail.comn     |
+| 2  | Đặng Hồng Sơn  | 15520728@gm.uit.edu.vn |
+| 3  | Trần Quang Hải | 15520190@gm.uit.edu.vn |
+| 4  | Đoàn Văn Hải   | 15520180@gm.uit.edu.vn |
+| 5  | Trương Văn Sửu | 15520743@gm.uit.edu.vn |
 
 # Các công nghệ sử dụng trong project
 - Front-end: Bootstrap + Jquery
-- Back-end: PDO classes, SPL auto load
+- Back-end: PDO classes, SPL auto load, Smarty template engine
 # Các modules
 - Quản lý cửa hàng (thêm, sửa, xóa thông tin) dành cho người bán:
   + Người dùng: chỉnh sửa thông tin, thay đổi mật khẩu, ban hành lệnh cấm với người dùng, giải quyết khiếu nại của người dùng.
