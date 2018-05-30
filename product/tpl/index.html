@@ -1,0 +1,98 @@
+{include file='../../tpl/header.html'}
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-9 col-xl-9">
+        <div class="row mt-2">
+            <div class="col-sm-12 col-md-12 col-lg-6 col-lg-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <img src="{$homeurl}/uploads/{$product.image}" alt="Product thumbnail" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6 col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>{$product.name}</h2>
+                    </div>
+                    <div class="card-body pt-2">
+                        <h5 class="card-subtitle">
+                            Giá:
+                            <span class="text-danger">{$product.price_last} VNĐ</span>
+                            <strike>{$product.price_first} VNĐ</strike>
+                            <span class="text-success">{$product.discount}</span>
+                        </h5>
+                        <h6>
+                            <span class="fas fa-star star-checked"></span>
+                            <span class="fas fa-star star-checked"></span>
+                            <span class="fas fa-star star-checked"></span>
+                            <span class="fas fa-star-half star-checked"></span>
+                            <span class="fas fa-star"></span>
+                            | Lượt mua: {$product.buy_count}
+                        </h6>
+                        <p class="card-text">{$product.short_desc}</p>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <a href="cart.php?add={$product.id}" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                        <a href="buy.php?product={$product.id}" class="btn btn-danger">Mua ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text">
+                            {$product.description}
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+        <div class="card mt-2">
+            <div class="card-header">
+                <b>Sản phẩm khác cùng danh mục</b>
+            </div>
+            {if not isset($list)}
+            <div class="card-body">
+                Chưa có sản phẩm nào khác cùng danh mục
+            </div>
+            {else}
+            <div class="card-body">
+                {foreach $list as $item}
+                <div class="row mt-2">
+                    <div class="col-12 m-0 p-0">
+                        <div class="card p-0 m-0">
+                            <img class="card-img-top p-1" src="{$homeurl}/uploads/{$item.image}" alt="Product title">
+                            <div class="card-body m-0">
+                                <a href="index.php?id={$item.id}">
+                                    <h6 class="card-title">{$item.name}</h6>
+                                </a>
+                                <p class="card-text">
+                                    <span class="fas fa-star star-checked"></span>
+                                    <span class="fas fa-star star-checked"></span>
+                                    <span class="fas fa-star star-checked"></span>
+                                    <span class="fas fa-star-half star-checked"></span>
+                                    <span class="fas fa-star"></span>
+                                    <br/> Giá:
+                                    <span class="text-danger">{$item.price_last}</span> VNĐ
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/foreach}
+            </div>
+            <div class="card-footer">
+                <a href="cat.php?id={$product.cat_id}" class="btn btn-secondary">Xem tất cả</a>
+            </div>
+            {/if}
+        </div>
+
+    </div>
+</div>
+{include file='../../tpl/footer.html'}

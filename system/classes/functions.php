@@ -1,25 +1,34 @@
 <?php
 /*
-* Name: FS
-* Author: github.com/ptudweb-lab/project
-* Version: VERSION.txt
-*/
+ * Name: FS
+ * Author: github.com/ptudweb-lab/project
+ * Version: VERSION.txt
+ */
 
 defined('_IN_FS') or die('Error: restricted access');
 
 class functions
 {
-    
 
-    public static function display_error($message) {
+    public static function display_error($message)
+    {
         return '<div class="alert alert-danger"><i class="fas fa-times-circle "></i> ' . $message . '</div>';
     }
 
-    public static function display_error_tpl($message) {
+    public static function display_error_tpl($message)
+    {
         $out = [];
         foreach ($message as $key => $val) {
             $out[$key] = '<div class="text-danger"><i class="fas fa-times-circle "></i> ' . $val . '</div>';
         }
         return $out;
+    }
+
+    public static function checkout($str)
+    {
+        $str = nl2br($str);
+        $str = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $str);
+        $str = preg_replace('#<script(.*?)>#is', '', $str);
+        return $str;
     }
 }
