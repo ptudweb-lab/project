@@ -1,0 +1,23 @@
+{include file='../../tpl/header.html'}
+<div id="admin">
+    <div class="row mt-3">
+        <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+            <div class="card">
+                <div class="card-header">
+                    <span class="font-weight-bold">
+                        <i class="fas fa-cogs"></i> Cài đặt</span>
+                </div>
+                <div class="card-body p-1">
+                    <div class="list-group">
+                        {$left_panel_content}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-12 col-lg-9 col-xl-9">
+            {include file=$file_module}
+        </div>
+    </div>
+</div>
+{include file='../../tpl/footer.html'}

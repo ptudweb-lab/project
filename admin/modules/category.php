@@ -6,7 +6,7 @@
 * Version: VERSION.txt
 */
 defined('_IN_FS') or die('Error: restricted access');
-    
+
 $name = isset($_POST['name']) ? trim($_POST['name']) : false;
 $token = isset($_POST['token']) ? trim($_POST['token']) : false;
 if (isset($_POST['submit'])) {
@@ -35,8 +35,9 @@ if (isset($_POST['submit'])) {
             echo 'Exception -> ';
             var_dump($e->getMessage());
         }
-        header('Location: ' . $_SERVER['HTTP_REFERER'] . '#category');
-        echo '<div class="alert alert-success">Đã thêm danh mục thành công</div>';
+        $tpl->assign('updated', true);
+    } else {
+        $tpl->assign('error', $error);
     }
 }
 
@@ -46,32 +47,16 @@ if (isset($_SESSION['token'])) {
 }
     
 $_SESSION['token'] = auth::genToken(35);
+
+$tpl->assign('token', $_SESSION['token']);
+
+$stmt = $db->query("SELECT * FROM `product_cat`");
+
+$list_item = '';
+while($row = $stmt->fetch()) {
+    $list_item .= '<a href="../product/cat.php?id=' . $row['id'] . '" class="list-group-item list-group-item-action">' . $row['name'] . '</a>';
+}
+
+$tpl->assign('items', $list_item);
 ?>
 
-<div class="card">
-    <div class="card-header">
-        <span class="font-weight-bold">Thiết lập danh mục sản phẩm</span>
-    </div>
-    <div class="card-body">
-        <div class="row">
-            <div class="col-12">
-                <form action="#" method="post">
-                    <div class="form-row">
-                        <div class="form-group col-sm-12 col-md-12 col-lg-5 col-xl-5">
-                            <input type="text" name="name" class="form-control" placeholder="Nhập tên danh mục">
-                            <?= isset($error['name']) ? functions::display_error($error['name']) : '' ?>
-                        </div>
-                        <div class="form-group col-sm-12 col-md-12 col-lg-5 col-xl-5">
-                            <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
-                            <?= isset($error['token']) ? functions::display_error($error['token']) : '' ?>
-                            <button type="submit" name="submit" class="btn btn-success">Thêm</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="row">
-
-        </div>
-    </div>
-</div>

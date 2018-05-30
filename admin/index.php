@@ -6,14 +6,17 @@
 * Version: VERSION.txt
 */
 define('_IN_FS', 1);
+$headmod = 'admin_panel';
+$title = 'Quản lí';
 require_once('../system/core.php');
-//$script = 'js/load.js';
-require_once('../system/head.php');
-if ($isAdmin) {
+
+if (!$isAdmin) {
+    die('Khu vực này chỉ dành cho quản trị viên! Đi ra điiiii...');
+}
 
     $modules = [
                 'general' => 'Thiết lập chung',
-                'category' => 'Danh mục sản phẩm', 
+                'category' => 'Danh mục sản phẩm',
                 'product' => 'Quản lí sản phẩm'
                 ];
     $icon_modules = ['general' => 'fa-cog',
@@ -28,24 +31,16 @@ if ($isAdmin) {
     $module = str_replace('/', '', $module);
     $module = str_replace('\\', '', $module);
     
-    echo '<div id="admin"><div class="row mt-3">';
-    echo '<div class="col-sm-12 col-md-12 col-lg-3 col-xl-3"><div class="card">';
-    echo '<div class="card-header"><span class="font-weight-bold"><i class="fas fa-cogs"></i> Cài đặt</span></div>';
-    echo '<div class="card-body p-1"><div class="list-group">';
+    $left_panel_content = '';
     foreach ($modules as $key => $value) {
-        echo '<a href="index.php?mod=' . $key . '"  class="list-group-item list-group-item-action ' . ($module === $key ? 'active' : '') . '">';
-        echo '<i class="fas ' . $icon_modules[$key] . '"></i> ' . $value . '</a>';
+        $left_panel_content .= '<a href="index.php?mod=' . $key . '"  class="list-group-item list-group-item-action ' . ($module === $key ? 'active' : '') . '">' .
+                                 '<i class="fas ' . $icon_modules[$key] . '"></i> ' . $value . '</a>';
     }
 
-    echo '</div></div>';
-    echo '</div></div>';
+    include 'modules/' .$module . '.php';
 
-    echo '<div class="col-sm-12 col-md-12 col-lg-9 col-xl-9">';
-    include 'modules/' . $module . '.php';
-    echo '</div>';
-    echo '</div></div>';
-} else {
-    echo functions::display_error('Khu vực này chỉ dành cho quản trị viên');
-}
-require_once('../system/foot.php');
-?>
+    $tpl->assign('left_panel_content', $left_panel_content);
+    $tpl->assign('file_module', $module . '.html');
+
+    $tpl->display('index.html');
+    
