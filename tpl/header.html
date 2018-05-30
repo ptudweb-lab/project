@@ -58,7 +58,7 @@
                 </button>
                 {if $is_user eq true }
                 <button type="button" class="btn btn-info text-right" data-toggle="modal" data-target="#userModal">
-                    <i class="fas fa-sign-in-alt"></i> Tài khoản</button>
+                    <i class="fas fa-user"></i> Tài khoản</button>
                 {else}
                 <button type="button" class="btn btn-info text-right" data-toggle="modal" data-target="#loginForm">
                     <i class="fas fa-sign-in-alt"></i> Đăng nhập</button>
@@ -164,7 +164,15 @@
                 <div class="modal-body">
                     <div class="card">
                         <div class="card-header">Chào {$user.fullname}</div>
-                        <div class="card-body">Thông tin</div> 
+                        <div class="card-body">
+                            <div class="list-group">
+                                {if $is_admin eq true}
+                                <a href="{$homeurl}/admin" class="list-group-item list-group-item-action"><span class="text-danger">Admin Panel</span></a>
+                                {/if}
+                                <a href="#" class="list-group-item list-group-item-action">Profile</a>
+                                <a href="#" class="list-group-item list-group-item-action">Thông báo</a>
+                            </div>
+                        </div> 
                         <div class="card-footer"><a href="{$homeurl}/users/logout.php">Đăng xuất</a></div>
                       </div>
                 </div>

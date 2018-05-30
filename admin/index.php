@@ -17,11 +17,13 @@ if (!$isAdmin) {
     $modules = [
                 'general' => 'Thiết lập chung',
                 'category' => 'Danh mục sản phẩm',
-                'product' => 'Quản lí sản phẩm'
+                'product' => 'Quản lí sản phẩm',
+                'bill' => 'Các đơn đặt hàng'
                 ];
     $icon_modules = ['general' => 'fa-cog',
                     'category' => 'fa-th-list',
-                    'product' => 'fa-shopping-basket'
+                    'product' => 'fa-shopping-basket',
+                    'bill' => 'fa-money-bill-alt'
                 ];
     $module = isset($_GET['mod']) ? trim($_GET['mod']) : 'general';
     if (!array_key_exists($module, $modules)) {

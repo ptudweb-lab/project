@@ -98,6 +98,9 @@
     content: "\f234";
 }
 
+.fa-user:before {
+    content: "\f007"; }
+
 .fa-bullhorn:before {
     content: "\f0a1";
 }
@@ -191,3 +194,6 @@
 .fa-venus:before {
     content: "\f221";
 }
+
+.fa-money-bill-alt:before {
+    content: "\f3d1"; }
