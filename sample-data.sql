@@ -1,0 +1,3 @@
+INSERT INTO `users` (`id`, `email`, `level`, `fullname`, `phone`, `sex`, `address`, `session_id`, `password`, `created_time`, `last_login`, `failed_login`, `browser`, `ip`, `ip_via_proxy`) VALUES
+(1, 'arituan@gmail.com', 1, 'Lê Hoàng Tuấn', '0123456789', 'm', 'km20 Xa lộ Hà nội, Khu phố 6, phường Linh Trung, quận Thủ Đức,Tp.HCM', '$2y$10$rOQEsMuZWG14SRNm.ATfA.IOBIgKijiE3wksR3VMGIQClpFi8t3ti', '$2y$10$paSm3brlg3jrbjeB4qt/2e2uh7reQRsE93cEKaSoHcDR05MiVTHIG', 1525321059, 1527636963, 0, 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36', 2130706433, NULL);
+
