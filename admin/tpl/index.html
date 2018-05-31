@@ -9,7 +9,10 @@
                 </div>
                 <div class="card-body p-1">
                     <div class="list-group">
-                        {$left_panel_content}
+                        {foreach $items as $item}
+                        <a href="admin/index.php?mod={$item.key}" class="list-group-item list-group-item-action{$item.active}">
+                            <i class="fas {$item.icon}"></i> {$item.val}</a>
+                        {/foreach}
                     </div>
                 </div>
             </div>

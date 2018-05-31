@@ -33,15 +33,17 @@ if (!$isAdmin) {
     $module = str_replace('/', '', $module);
     $module = str_replace('\\', '', $module);
     
-    $left_panel_content = '';
+    $left_panel_content = [];
     foreach ($modules as $key => $value) {
-        $left_panel_content .= '<a href="index.php?mod=' . $key . '"  class="list-group-item list-group-item-action ' . ($module === $key ? 'active' : '') . '">' .
-                                 '<i class="fas ' . $icon_modules[$key] . '"></i> ' . $value . '</a>';
+        $left_panel_content[] = ['key' => $key,
+                            'val' => $value,
+                            'active' => ($module == $key ? 'active' : ''),
+                            'icon' => $icon_modules[$key]];
     }
 
     include 'modules/' .$module . '.php';
 
-    $tpl->assign('left_panel_content', $left_panel_content);
+    $tpl->assign('items', $left_panel_content);
     $tpl->assign('file_module', $module . '.html');
 
     $tpl->display('index.html');

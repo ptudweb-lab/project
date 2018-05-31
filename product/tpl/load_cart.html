@@ -13,7 +13,7 @@
         {foreach $cart as $item}
         <tr>
             <th scope="row">{$item.i}</th>
-            <td>{$item.name}</td>
+            <td><a href="{$homeurl}/product/index.php?id={$item.id}">{$item.name}</a></td>
             <td>{$item.num}</td>
             <td>{$item.price_last}<sup>đ</sup></td>
             <td><a href="#"><i class="fas fa-plus"></i></a> <a href="#"><i class="fas fa-minus text-danger"></i></a> <a href="#"><i class="fas fa-times text-warning"></i></td>
