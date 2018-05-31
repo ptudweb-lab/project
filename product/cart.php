@@ -11,9 +11,13 @@ require_once '../system/core.php';
 $num = isset($_GET['num']) ? abs(intval($_GET['num'])) : 1;
 $act = isset($_GET['act']) ? trim($_GET['act']) : '';
 
-$cart = new cart();
 switch ($act) {
     case 'load':
+        if (null != $cart->load()) {
+            echo 'Load';
+        } else {
+            echo 'Giỏ hàng hiện đang trống';
+        }
         break;
     case 'add':
         if ($id) {

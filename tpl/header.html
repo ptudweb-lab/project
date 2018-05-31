@@ -12,7 +12,7 @@
     <script language="javascript" src="{$homeurl}/js/jquery.min.js"></script>
     <script language="javascript" src="{$homeurl}/js/popper.min.js"></script>
     <script language="javascript" src="{$homeurl}/js/bootstrap.min.js"></script>
-    <script language="javascript" src="{$homeurl}/js/myScript.js"></script>
+    <script language="javascript" src="{$homeurl}/js/script.js"></script>
     <meta name="description" content="{$meta_description}">
     <meta name="keywords" content="{$meta_keywords}">
     <meta name="author" content="FS">
@@ -54,7 +54,11 @@
                 </button>
                 <button type="button" formaction="#" class="btn btn-warning ml-3 mr-1">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="badge badge-light">0</span>
+                    {if $cart_length eq 0}
+                    <span id="cart_length" class="badge badge-light">{$cart_length}</span>
+                    {else}
+                    <span id="cart_length" class="badge badge-danger">{$cart_length}</span>
+                    {/if}
                 </button>
                 {if $is_user eq true }
                 <button type="button" class="btn btn-info text-right" data-toggle="modal" data-target="#userModal">
@@ -86,8 +90,11 @@
                         {/if}
 
                         <a class="dropdown-item btn-primary" href="#">
-                            <i class="fas fa-shopping-cart"></i> Giỏ hàng
-                            <span class="badge badge-light">0</span>
+                            <i class="fas fa-shopping-cart"></i> Giỏ hàng {if $cart_length eq 0}
+                            <span id="cart_length" class="badge badge-light">{$cart_length}</span>
+                            {else}
+                            <span id="cart_length" class="badge badge-danger">{$cart_length}</span>
+                            {/if}
                         </a>
                         <a class="dropdown-item btn-primary" href="#">
                             <i class="fas fa-newspaper"></i> Tin tức</a>
@@ -167,14 +174,18 @@
                         <div class="card-body p-0">
                             <div class="list-group m-2">
                                 {if $is_admin eq true}
-                                <a href="{$homeurl}/admin" class="list-group-item list-group-item-action"><span class="text-danger">Admin Panel</span></a>
+                                <a href="{$homeurl}/admin" class="list-group-item list-group-item-action">
+                                    <span class="text-danger">Admin Panel</span>
+                                </a>
                                 {/if}
                                 <a href="#" class="list-group-item list-group-item-action">Profile</a>
                                 <a href="#" class="list-group-item list-group-item-action">Thông báo</a>
                             </div>
-                        </div> 
-                        <div class="card-footer"><a href="{$homeurl}/users/logout.php">Đăng xuất</a></div>
-                      </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{$homeurl}/users/logout.php">Đăng xuất</a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Modal footer -->

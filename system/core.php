@@ -112,6 +112,8 @@ if ($stmt->rowCount()) {
 
 $tpl->assign('show_cat', $show_cat);
 
+$cart = new cart();
+$tpl->assign('cart_length', $cart->length());
 @ini_set('zlib.output_compression_level', 3);
 //ob_start('ob_gzhandler');
 ob_start();

@@ -71,7 +71,7 @@
     <div class="alert">Danh sách hiện tại rỗng</div>
     {else} {foreach $new_list_product as $product}
     <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-        <div class="card h-100 mt-1">
+        <div class="card h-100 m-1">
             <img class="card-img-top" src="{$homeurl}/uploads/{$product.image}" alt="Product title">
             <div class="card-body">
                 <h5 class="card-title">{$product.name}</h5>
@@ -89,9 +89,15 @@
                 </p>
             </div>
             <div class="card-footer">
-                <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
+                {if isset($product.added)}
+                <button class="btn btn-secondary" value="{$product.id}" id="add_cart" disabled>
                     <i class="fas fa-cart-plus"></i>
-                </a>
+                </button>
+                {else}
+                <button class="btn btn-warning" value="{$product.id}" id="add_cart">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+                {/if}
 
                 <a href="{$homeurl}/product/index.php?id={$product.id}" class="btn btn-primary float-right">
                     Chi tiết
@@ -129,7 +135,7 @@
     <div class="alert">Danh sách hiện tại rỗng</div>
     {else} {foreach $top_list_product as $product}
     <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-        <div class="card h-100 mt-1">
+        <div class="card h-100 m-1">
             <img class="card-img-top" src="{$homeurl}/uploads/{$product.image}" alt="Product title">
             <div class="card-body">
                 <h5 class="card-title">{$product.name}</h5>
@@ -148,9 +154,15 @@
                 </p>
             </div>
             <div class="card-footer">
-                <a href="#" class="btn btn-secondary" title="Thêm vào giỏ hàng">
+                {if isset($product.added)}
+                <button class="btn btn-secondary" value="{$product.id}" id="add_cart" disabled>
                     <i class="fas fa-cart-plus"></i>
-                </a>
+                </button>
+                {else}
+                <button class="btn btn-warning" value="{$product.id}" id="add_cart">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+                {/if}
 
                 <a href="{$homeurl}/product/index.php?id={$product.id}" class="btn btn-primary float-right">
                     Chi tiết

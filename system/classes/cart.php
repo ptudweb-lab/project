@@ -83,6 +83,13 @@ class cart
         return $status;
     }
 
+    public function length() {
+        if (isset($this->data)) {
+            return count($this->data);
+        } else {
+            return 0;
+        }
+    }
     public function load()
     {
         return $this->data;
