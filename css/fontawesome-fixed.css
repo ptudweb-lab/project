@@ -165,6 +165,10 @@
     content: "\f291";
 }
 
+
+.fa-times:before {
+    content: "\f00d"; }
+
 .fa-times-circle:before {
     content: "\f057";
 }
@@ -197,3 +201,8 @@
 
 .fa-money-bill-alt:before {
     content: "\f3d1"; }
+
+.fa-plus:before {
+    content: "\f067"; }
+.fa-minus:before {
+        content: "\f068"; }

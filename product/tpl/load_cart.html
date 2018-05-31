@@ -2,11 +2,11 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th scope="col">STT</th>
-            <th scope="col">Tên sản phẩm</th>
-            <th scope="col">Số lượng</th>
-            <th scope="col">Giá</th>
-            <th scope="col"></th>
+            <th scope="col" style="width: 5%;">#</th>
+            <th scope="col" style="width: 60%;">Tên sản phẩm</th>
+            <th scope="col" style="width: 5%;">SL</th>
+            <th scope="col" style="width: 15%;">Giá</th>
+            <th scope="col" style="width: 15%;"></th>
         </tr>
     </thead>
     <tbody>
@@ -15,10 +15,14 @@
             <th scope="row">{$item.i}</th>
             <td>{$item.name}</td>
             <td>{$item.num}</td>
-            <td>{$item.price_last}</td>
-            <td></td>
+            <td>{$item.price_last}<sup>đ</sup></td>
+            <td><a href="#"><i class="fas fa-plus"></i></a> <a href="#"><i class="fas fa-minus text-danger"></i></a> <a href="#"><i class="fas fa-times text-warning"></i></td>
         </tr>
         {/foreach}
+        <tr>
+            <th scope="row" colspan="3">Tổng tiền: </th>
+            <td colspan="2"><b>{$total_price}<sup>đ</sup></b></td>
+        </tr>
     </tbody>
 </table>
 {else}

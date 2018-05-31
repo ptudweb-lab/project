@@ -10,6 +10,8 @@ require_once '../system/core.php';
 
 $stmt = $db->query("SELECT * FROM `product` WHERE `id` = " . $db->quote($id) . ";");
 
+$carts = $cart->load();
+
 if ($stmt->rowCount()) {
     $product = $stmt->fetch();
     $product['discount'] = '(-';
@@ -28,7 +30,9 @@ if ($stmt->rowCount()) {
     $product['short_desc'] = $tmp;
 
     $product['description'] = functions::checkout($product['description']);
-
+    if (isset($carts[$product['id']])) {
+        $product['added'] = true;
+    }
     
 
     //other product in same category

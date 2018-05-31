@@ -50,7 +50,7 @@ require_once(ROOTPATH . DIRECTORY_SEPARATOR . 'system' . DIRECTORY_SEPARATOR . '
 $tpl = new Smarty;
 
 //Template
-$tpl->debugging = true;
+$tpl->debugging = false;
 $tpl->caching = false;
 $tpl->cache_lifetime = 120;
 $tpl->setTemplateDir('tpl');
