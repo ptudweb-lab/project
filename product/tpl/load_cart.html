@@ -1,0 +1,26 @@
+{if isset($cart)}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">STT</th>
+            <th scope="col">Tên sản phẩm</th>
+            <th scope="col">Số lượng</th>
+            <th scope="col">Giá</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {foreach $cart as $item}
+        <tr>
+            <th scope="row">{$item.i}</th>
+            <td>{$item.name}</td>
+            <td>{$item.num}</td>
+            <td>{$item.price_last}</td>
+            <td></td>
+        </tr>
+        {/foreach}
+    </tbody>
+</table>
+{else}
+Giỏ hàng của bạn đang trống, hãy tìm cho mình một món hàng và thêm vào giỏ hàng bạn nhé!
+{/if}

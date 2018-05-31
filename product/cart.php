@@ -11,13 +11,31 @@ require_once '../system/core.php';
 $num = isset($_GET['num']) ? abs(intval($_GET['num'])) : 1;
 $act = isset($_GET['act']) ? trim($_GET['act']) : '';
 
+$carts = $cart->load();
+
 switch ($act) {
     case 'load':
-        if (null != $cart->load()) {
-            echo 'Load';
-        } else {
-            echo 'Giỏ hàng hiện đang trống';
+        if ($carts != null) {
+            $pattern = [];
+            foreach ($carts as $id => $num) {
+                $pattern[] = abs(intval($id));
+            }
+            $pattern = implode(', ', $pattern);
+            $stmt = $db->query("SELECT `id`, `name`, `price_last` FROM `product` WHERE `id` IN (" . $pattern . ");");
+            if ($stmt->rowCount()) {
+                $list = [];
+                $i = 1;
+                while($row = $stmt->fetch()) {
+                    $row['i'] = $i;
+                    $row['num'] = intval($carts[$row['id']]);
+                    $row['price_last'] *= $row['num'];
+                    $list[] = $row;
+                    $i++;
+                }
+                $tpl->assign('cart', $list);
+            }
         }
+        $tpl->display('load_cart.html');
         break;
     case 'add':
         if ($id) {

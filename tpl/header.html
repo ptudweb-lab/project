@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{$homeurl}/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{$homeurl}/css/fontawesome-fixed.css">
-    <link rel="stylesheet" type="text/css" href="{$homeurl}/css/style.css">
-    <link rel="shortcut icon" href="{$homeurl}/favicon.ico" type="image/x-icon">
-    <script language="javascript" src="{$homeurl}/js/jquery.min.js"></script>
-    <script language="javascript" src="{$homeurl}/js/popper.min.js"></script>
-    <script language="javascript" src="{$homeurl}/js/bootstrap.min.js"></script>
-    <script language="javascript" src="{$homeurl}/js/script.js"></script>
+    <base href="{$homeurl}">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome-fixed.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <script language="javascript" src="/js/jquery.min.js"></script>
+    <script language="javascript" src="/js/popper.min.js"></script>
+    <script language="javascript" src="/js/bootstrap.min.js"></script>
+    <script language="javascript" src="/js/script.js"></script>
     <meta name="description" content="{$meta_description}">
     <meta name="keywords" content="{$meta_keywords}">
     <meta name="author" content="FS">
@@ -52,7 +53,7 @@
                 <button title="Tìm kiếm" class="btn btn-success" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
-                <button type="button" formaction="#" class="btn btn-warning ml-3 mr-1">
+                <button id="show_cart" type="button" class="btn btn-warning ml-3 mr-1" data-toggle="modal" data-target="#cartContent">
                     <i class="fas fa-shopping-cart"></i>
                     {if $cart_length eq 0}
                     <span id="cart_length" class="badge badge-light">{$cart_length}</span>
@@ -115,6 +116,31 @@
 
         </div>
     </nav>
+
+    <!-- The Modal Cart -->
+    <div class="modal fade" id="cartContent">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Giỏ hàng</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" id="cart-content">
+                    
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Đặt hàng</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- The Modal Login Form -->
     {if $is_user eq false }

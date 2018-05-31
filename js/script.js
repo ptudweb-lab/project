@@ -7,6 +7,7 @@ $(document).ready(function () {
             $('#navbar').removeClass('fixed-top');
         }
     });
+
     $("button#add_cart").click(function () {
         $.get("product/cart.php?act=add&id=" + $(this).val(), function (data) {
             alert(data);
@@ -17,5 +18,9 @@ $(document).ready(function () {
         let cart_length = parseInt($("span#cart_length").text()[0]) + 1;
         $("span#cart_length").text(cart_length);
         $("span#cart_length").attr("class", "badge badge-danger");
+    });
+
+    $("button#show_cart").click(function() {
+        $("div#cart-content").load("/product/cart.php?act=load");
     });
 });
