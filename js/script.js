@@ -1,9 +1,9 @@
 $(document).ready(function () {
     $(window).scroll(function () {
-        if ($(window).scrollTop() > 100) {
+        if ($(window).scrollTop() > 60) {
             $('#navbar').addClass('fixed-top');
         }
-        if ($(window).scrollTop() < 101) {
+        if ($(window).scrollTop() < 61) {
             $('#navbar').removeClass('fixed-top');
         }
     });
