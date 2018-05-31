@@ -11,11 +11,13 @@ require_once('system/core.php');
 $stmt = $db->query("SELECT `id`, `name`, `price_first`, `price_last`, `image` FROM `product` ORDER BY `time` DESC LIMIT 12");
 $new_list_product = [];
 while(($list = $stmt->fetch())) {
+    $list['discount'] = '(-';
+    $list['discount'] .= number_format(100 - ($list['price_last'] / floatval($list['price_first'])) * 100, 2);
+    $list['discount'] .= '%)';
+
     $list['price_first'] = number_format($list['price_first'], 0, '', '.');
     $list['price_last'] = number_format($list['price_last'], 0, '', '.');
-    $list['discount'] = '(-';
-    $list['discount'] .= number_format(100 - (intval($list['price_last']) / (floatval($list['price_first']))) * 100, 2);
-    $list['discount'] .= '%)';
+    
     $new_list_product[] = $list;
 }
 if (count($new_list_product) > 0) {

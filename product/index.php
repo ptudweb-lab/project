@@ -12,6 +12,10 @@ $stmt = $db->query("SELECT * FROM `product` WHERE `id` = " . $db->quote($id) . "
 
 if ($stmt->rowCount()) {
     $product = $stmt->fetch();
+    $product['discount'] = '(-';
+    $product['discount'] .= number_format(100 - ($product['price_last'])/ (floatval($product['price_first'])) * 100, 2);
+    $product['discount'] .= '%)';
+
     $product['price_first'] = number_format($product['price_first'], 0, '', '.');
     $product['price_last'] = number_format($product['price_last'], 0, '', '.');
 
@@ -25,9 +29,7 @@ if ($stmt->rowCount()) {
 
     $product['description'] = functions::checkout($product['description']);
 
-    $product['discount'] = '(-';
-    $product['discount'] .= number_format(100 - (intval($product['price_last']) / (floatval($product['price_first']))) * 100, 2);
-    $product['discount'] .= '%)';
+    
 
     //other product in same category
     $stmt = $db->query("SELECT `id`, `name`, `price_last`, `image` FROM `product` WHERE `id` != " . $db->quote($id) . " AND `cat_id` = " . $db->quote($product['cat_id']) . " ORDER BY `time` DESC LIMIT 3;");
