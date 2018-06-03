@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    var homeurl = $("a#homeurl").attr("href");
     $(window).scroll(function () {
         if ($(window).scrollTop() > 60) {
             $('#navbar').addClass('fixed-top');
@@ -9,7 +10,7 @@ $(document).ready(function () {
     });
 
     $("button#add_cart").click(function () {
-        $.get("product/cart.php?act=add&id=" + $(this).val(), function (data) {
+        $.get(homeurl + "/product/cart.php?act=add&id=" + $(this).val(), function (data) {
             alert(data);
         });
 
@@ -21,6 +22,6 @@ $(document).ready(function () {
     });
 
     $("button#show_cart").click(function() {
-        $("div#cart-content").load("/product/cart.php?act=load");
+        $("div#cart-content").load(homeurl + "/product/cart.php?act=load");
     });
 });

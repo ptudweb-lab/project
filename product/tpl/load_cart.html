@@ -4,9 +4,9 @@
         <tr>
             <th scope="col" style="width: 5%;">#</th>
             <th scope="col" style="width: 60%;">Tên sản phẩm</th>
-            <th scope="col" style="width: 5%;">SL</th>
+            <th scope="col" style="width: 15%;">SL</th>
             <th scope="col" style="width: 15%;">Giá</th>
-            <th scope="col" style="width: 15%;"></th>
+            <th scope="col" style="width: 5%;"></th>
         </tr>
     </thead>
     <tbody>
@@ -14,9 +14,9 @@
         <tr>
             <th scope="row">{$item.i}</th>
             <td><a href="{$homeurl}/product/index.php?id={$item.id}">{$item.name}</a></td>
-            <td>{$item.num}</td>
+            <td><a href="#">-</a> {$item.num} <a href="#">+</a></td>
             <td>{$item.price_last}<sup>đ</sup></td>
-            <td><a href="#"><i class="fas fa-plus"></i></a> <a href="#"><i class="fas fa-minus text-danger"></i></a> <a href="#"><i class="fas fa-times text-warning"></i></td>
+            <td><a href="#"><i class="fas fa-times text-warning"></i></td>
         </tr>
         {/foreach}
         <tr>
