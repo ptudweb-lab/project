@@ -27,15 +27,6 @@ CREATE TABLE `product_question` (
   ENGINE = MyISAM
   DEFAULT CHARSET = utf8mb4;
 
-DROP TABLE IF EXISTS `settings`;
-CREATE TABLE `settings` (
-	`name` varchar(25) NOT NULL,
-	`value` varchar(200) NOT NULL,
-	PRIMARY KEY (`name`)
-)
-  ENGINE = MyISAM
-  DEFAULT CHARSET = utf8mb4;
-
 DROP TABLE IF EXISTS `bill`;
 CREATE TABLE `bill` (
 	`id`  INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -157,10 +148,4 @@ CREATE TABLE `users` (
   ENGINE = MyISAM
   DEFAULT CHARSET = utf8mb4;
 
-
-INSERT INTO `settings` (name, value) VALUES 
-('sitename', 'FSS Store'),
-('siteurl', 'http://localhost'),
-('meta_description', 'Đây là cửa hàng FS - mang đến những điều tiện lợi, nhanh chóng, an toàn và thân thiện cho người mua'),
-('meta_keywords', 'fs, shop, store, ecommerce, php, mysql');
 

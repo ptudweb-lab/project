@@ -17,7 +17,7 @@ mb_internal_encoding('UTF-8'); //default encoding
 define('ROOTPATH', dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR);
 
 //Connect to database
-require_once('db.config.php');
+$dbconf = require_once('db.config.php');
 
 $dbInfo = $dbconf['driver'] . ':';
 $dbInfo .= 'host=' . $dbconf['host'] . ';';
@@ -70,11 +70,7 @@ $id = isset($_REQUEST['id']) ? abs(intval($_REQUEST['id'])) : false;
 $page = isset($_REQUEST['page']) && $_REQUEST['page'] > 0 ? intval($_REQUEST['page']) : 1;
 
 //set to setting variable
-$set = [];
-$stmt = $db->query('SELECT * FROM `settings`');
-while (($row = $stmt->fetch()) !== false) {
-    $set[$row['name']] = $row['value'];
-}
+$set = include('site.config.php');
 
 $homeurl = $set['siteurl'] ? $set['siteurl'] : 'http://' . $_SERVER['hostname'];
 

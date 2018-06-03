@@ -53,16 +53,21 @@ if (isset($_POST['submit'])) {
     }
 
     if (count($error) < 1) {
-        $pid = 0;
-        try {
-            foreach ($post as $name => $value) {
-                $stmt = $db->query("UPDATE `settings` SET `value` = " . $db->quote($value) . " WHERE `name` = " . $db->quote($name) . ";");
-            }
-        } catch (PDOException $e) {
-            echo 'Exception -> ';
-            var_dump($e->getMessage());
-            exit();
+        $content = [];
+        $content[] = '<?php';
+        $content[] = 'defined(\'_IN_FS\') or die(\'Error: restricted access\');';
+        $content[] = ' ';
+        $content[] = 'return [';
+        $tmp = [];
+        foreach ($post as $key => $val) {
+            $tmp[] = '    \'' . $key . '\' => \'' . $val . '\'';
         }
+        $content[] = implode(",\n", $tmp);
+        $content[] ='];';
+        $content[] = '?>';
+        $file = fopen('../system/site.config.php', 'w') or die("Unable to open file!");
+        fwrite($file, implode("\n", $content));
+        fclose($file);
         $tpl->assign('updated', true);
     } else {
         $tpl->assign('error', functions::display_error_tpl($error));
