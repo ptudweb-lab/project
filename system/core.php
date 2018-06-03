@@ -53,8 +53,8 @@ $tpl = new Smarty;
 $tpl->debugging = false;
 $tpl->caching = false;
 $tpl->cache_lifetime = 120;
-$tpl->setTemplateDir('tpl');
-$tpl->setCompileDir('tpl_c');
+$tpl->setTemplateDir('views');
+$tpl->setCompileDir('views_c');
 
 new core();
 
@@ -68,7 +68,7 @@ $userAgent = core::$userAgent;
 
 $id = isset($_REQUEST['id']) ? abs(intval($_REQUEST['id'])) : false;
 $page = isset($_REQUEST['page']) && $_REQUEST['page'] > 0 ? intval($_REQUEST['page']) : 1;
-$kmess = 2;
+$kmess = 8;
 $start = isset($_REQUEST['page']) ? $page * $kmess - $kmess : (isset($_GET['start']) ? abs(intval($_GET['start'])) : 0);
 
 //set to setting variable
