@@ -68,6 +68,8 @@ $userAgent = core::$userAgent;
 
 $id = isset($_REQUEST['id']) ? abs(intval($_REQUEST['id'])) : false;
 $page = isset($_REQUEST['page']) && $_REQUEST['page'] > 0 ? intval($_REQUEST['page']) : 1;
+$kmess = 2;
+$start = isset($_REQUEST['page']) ? $page * $kmess - $kmess : (isset($_GET['start']) ? abs(intval($_GET['start'])) : 0);
 
 //set to setting variable
 $set = include('site.config.php');
@@ -96,17 +98,15 @@ if ((!isset($headmod) || $headmod != 'login') && !$isUser) {
 
 //$script = isset($script) ? '<script language="javascript" src="' . $script . '"></script>' : '';
 //load category for header
-$show_cat = '';
+$category_list = [];
 $stmt = $db->query("SELECT * FROM `product_cat`;");
 if ($stmt->rowCount()) {
     while ($row = $stmt->fetch()) {
-        $show_cat .= '<a class="dropdown-item btn-primary" href="' . $row['id'] . '">' . $row['name'] . '</a>';
+        $category_list[] = $row;
     }
-} else {
-    $show_cat = 'Danh mục rỗng';
+    $tpl->assign('category_list', $category_list);
 }
 
-$tpl->assign('show_cat', $show_cat);
 
 $cart = new cart();
 $tpl->assign('cart_length', $cart->length());
