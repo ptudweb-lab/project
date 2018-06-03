@@ -1,10 +1,10 @@
 <?php
 
 /*
-* Name: FS
-* Author: github.com/ptudweb-lab/project
-* Version: VERSION.txt
-*/
+ * Name: FS
+ * Author: github.com/ptudweb-lab/project
+ * Version: VERSION.txt
+ */
 defined('_IN_FS') or die('Error: restricted access');
 
 $name = isset($_POST['name']) ? trim($_POST['name']) : false;
@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
             $error['name'] = 'Độ dài của Họ Tên phải nằm trong khoảng 2 đến 100 kí tự';
         }
     }
-    
+
     if (!$token || strcmp($token, $_SESSION['token']) != 0) {
         $error['token'] = 'Phiên chứng thực không hợp lệ';
     }
@@ -26,11 +26,11 @@ if (isset($_POST['submit'])) {
     if (count($error) < 1) {
         $pid = 0;
         try {
-            $stmt = $db->prepare("INSERT INTO `product_cat` (name, parent_id) 
+            $stmt = $db->prepare("INSERT INTO `product_cat` (name, parent_id)
                                             VALUES(:name, :parent)");
             $stmt->execute(['name' => $name,
-                            'parent' => $pid
-                        ]);
+                'parent' => $pid,
+            ]);
         } catch (PDOException $e) {
             echo 'Exception -> ';
             var_dump($e->getMessage());
@@ -41,7 +41,6 @@ if (isset($_POST['submit'])) {
     }
 }
 
-
 if (isset($_SESSION['token'])) {
     unset($_SESSION['token']);
 }
@@ -50,13 +49,14 @@ $_SESSION['token'] = auth::genToken(35);
 
 $tpl->assign('token', $_SESSION['token']);
 
-$stmt = $db->query("SELECT * FROM `product_cat`");
+/* $stmt = $db->query("SELECT * FROM `product_cat`");
 
-$list_item = '';
-while($row = $stmt->fetch()) {
-    $list_item .= '<a href="../product/cat.php?id=' . $row['id'] . '" class="list-group-item list-group-item-action">' . $row['name'] . '</a>';
-}
+$categroy_list = [];
+if ($stmt->rowCount()) {
+    while ($row = $stmt->fetch()) {
+        $categroy_list[] = $row;
+    }
+    $tpl->assign('category_list', $categroy_list);
+} */
 
-$tpl->assign('items', $list_item);
-?>
 

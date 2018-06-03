@@ -11,12 +11,10 @@
                 <form action="#" method="post">
                     <div class="form-row">
                         <div class="form-group col-sm-12 col-md-12 col-lg-9 col-xl-9">
-                            <input type="text" name="name" class="form-control" placeholder="Nhập tên danh mục">
-                            {if isset($error.name)} {$error.name} {/if}
+                            <input type="text" name="name" class="form-control" placeholder="Nhập tên danh mục"> {if isset($error.name)} {$error.name} {/if}
                         </div>
                         <div class="form-group col-sm-12 col-md-12 col-lg-3 col-xl-3">
-                            <input type="hidden" name="token" value="{$token}">
-                            {if isset($error.token)} {$error.token} {/if}
+                            <input type="hidden" name="token" value="{$token}"> {if isset($error.token)} {$error.token} {/if}
                             <button type="submit" name="submit" class="btn btn-success">Thêm</button>
                         </div>
                     </div>
@@ -32,7 +30,9 @@
     </div>
     <div class="card-body p-1">
         <div class="list-group">
-            {$items}
+            {if isset($category_list)} {foreach $category_list as $item}
+            <a href="../product/cat.php?id={$item.id}" class="list-group-item list-group-item-action">{$item.name}</a>
+            {/foreach} {else} Chưa có danh mục nào, hãy thêm vào nhé {/if}
         </div>
     </div>
 </div>
