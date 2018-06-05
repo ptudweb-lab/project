@@ -1,15 +1,33 @@
 <div class="row">
     <div class="col-12">
         <div class="card">
-            {if isset($id)}
-            {if isset($bill)}
+            <div class="card-body m-0 p-2">
+                <form action="index.php" method="get">
+                    <div class="form-row">
+                        <div class="form-group col-sm-12 col-md-12 col-lg-4 col-xl-4 m-0">
+                            <input type="hidden" name="mod" value="bill">
+                            <input type="number" name="id" class="form-control" placeholder="Nhập mã đơn hàng">
+                        </div>
+                        <div class="form-group col-sm-12 col-md-12 col-lg-8 col-xl-8 m-0">
+                            <button type="submit" class="btn btn-dark">Tìm</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="col-12">
+        <div class="card">
+            {if isset($id)} {if isset($bill)}
             <div class="card-header">
-                <h5>Thông tin chi tiết đơn hàng</h5>
+                <h5>Thông tin chi tiết đơn hàng số #{$id}</h5>
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
-                        <div class="card">
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="card mt-2 p-0">
                             <div class="card-header">
                                 <h6>Thông tin các sản phẩm</h6>
                             </div>
@@ -18,56 +36,117 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
-
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="card mt-2 p-0">
+                            <div class="card-header">
+                                <h6>Thông tin khách hàng</h6>
+                            </div>
+                            <div class="card-body p-2">
+                                <dl class="row">
+                                    <dt class="col-sm-4">Họ tên</dt>
+                                    <dd class="col-sm-8">{$bill.customer_name}</dd>
+                                    <dt class="col-sm-4">SĐT</dt>
+                                    <dd class="col-sm-8">{$bill.customer_phone}</dd>
+                                    <dt class="col-sm-4">Email</dt>
+                                    <dd class="col-sm-8">{$bill.customer_email}</dd>
+                                    <dt class="col-sm-4">Địa chỉ</dt>
+                                    <dd class="col-sm-8">{$bill.customer_address}</dd>
+                                    <dt class="col-sm-4">Ghi chú</dt>
+                                    <dd class="col-sm-8">{$bill.comment}</dd>
+                                    <dt class="col-sm-4">Giao hàng</dt>
+                                    <dd class="col-sm-8">{if $bill.ship_type eq 0} Tiêu chuẩn {else} Miễn phí {/if}</dd>
+                                    <dt class="col-sm-4">Tình trạng</dt>
+                                    <dd class="col-sm-8">{$list_status[$bill.status].name}</dd>
+                                </dl>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="card-footer">
+                {if $bill.status neq 1}
+                <a href="index.php?mod=bill&amp;act=active&amp;id={$bill.id}&amp;token={$token}" class="btn btn-primary">
+                    Duyệt đơn hàng
+                </a>
+                {/if} {if $bill.status neq 2}
+                <a href="index.php?mod=bill&amp;act=delete&amp;id={$bill.id}&amp;token={$token}" class="btn btn-danger float-right">
+                    Hủy đơn hàng
+                </a>
+                {/if}
+            </div>
             {else}
-            <div class="alert alert-danger">Hóa đơn không tồn tại</div>
-            {/if}
-            {else}
+            <div class="alert alert-danger m-0">Hóa đơn không tồn tại</div>
+            {/if} {else}
             <div class="card-header">
                 <h5>Danh sách đơn hàng</h5>
             </div>
-            <div class="card-body">
-                {if not isset($bills)}
-                Danh mục rỗng
-                {else}
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col" style="width: 5%;">#</th>
-                            <th scope="col" style="width: 15%;">Họ tên</th>
-                            <th scope="col" style="width: 15%;">SĐT</th>
-                            <th scope="col" style="width: 45%;">Địa chỉ giao hàng</th>
-                            <th scope="col" style="width: 15%;">Tổng tiền</th>
-                            <th scope="col" style="width: 5%;"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {foreach $bills as $item}
-                        <tr>
-                            <th scope="row">{$item.i}</th>
-                            <td>
-                                <a href="index.php?mod=bill&amp;id={$item.id}">{$item.customer_name}</a>
-                            </td>
-                            <td>
-                                {$item.customer_phone}
-                            </td>
-                            <td>
-                                {$item.customer_address}
-                            </td>
-                            <td>{$item.total_price}
-                                <sup>đ</sup>
-                            </td>
-                            <td>
-                                <a href="index.php?mod=bill&amp;act=active&amp;id={$item.id}">Duyệt</a> - <a href="index.php?mod=bill&amp;act=del&amp;id={$item.id}">x</a>
-                            </td>
-                        </tr>
-                        {/foreach}
-                    </tbody>
-                </table>
+            <div class="card-body m-0 p-2">
+                <ul class="nav nav-tabs">
+                    {foreach $list_status as $item}
+                    <li class="nav-item">
+                        <a href="index.php?mod=bill&amp;status={$item.code}" class="nav-link {if $item.code eq $status} active {/if}">{$item.name} {if $item.total eq 0}
+                            <span class="badge badge-dark">{$item.total}</span>
+                            {else}
+                            <span class="badge badge-danger">{$item.total}</span>
+                            {/if}
+                        </a>
+                    </li>
+                    {/foreach}
+                </ul>
+                <div class="table-responsive-sm border-right border-left border-bottom">
+                    {if not isset($bills)}
+                    <div class="alert alert-danger m-0">Danh sách rỗng</div>
+                    {else}
+                    <table class="table table-striped table-borderless m-0">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 5%;">#</th>
+                                <th scope="col" style="width: 10%;">Time</th>
+                                <th scope="col" style="width: 15%;">Họ tên</th>
+                                <th scope="col" style="width: 10%;">SĐT</th>
+                                <th scope="col" style="width: 40%;">Địa chỉ giao hàng</th>
+                                <th scope="col" style="width: 15%;">Tổng tiền</th>
+                                <th scope="col" style="width: 5%;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {foreach $bills as $item}
+                            <tr>
+                                <td>
+                                    <a href="index.php?mod=bill&amp;id={$item.id}">{$item.id}</a>
+                                </td>
+                                <td>
+                                    <small class="text-muted">{$item.time}</small>
+                                </td>
+                                <td>
+                                    {$item.customer_name}
+                                </td>
+                                <td>
+                                    {$item.customer_phone}
+                                </td>
+                                <td>
+                                    <small class="text-muted">{$item.customer_address}</small>
+                                </td>
+                                <td>{$item.total_price}
+                                    <sup>đ</sup>
+                                </td>
+                                <td>
+                                    {if $item.status neq 1}
+                                    <a href="index.php?mod=bill&amp;act=active&amp;id={$item.id}&amp;token={$token}">
+                                        <i class="fas fa-check"></i>
+                                    </a>
+                                    {/if} {if $item.status neq 2}
+                                    <a href="index.php?mod=bill&amp;act=delete&amp;id={$item.id}&amp;token={$token}">
+                                        <i class="fas fa-thumbs-down text-danger"></i>
+                                    </a>
+                                    {/if}
+                                </td>
+                            </tr>
+                            {/foreach}
+                        </tbody>
+                    </table>
+                </div>
+
                 {/if}
             </div>
             {/if}

@@ -24,7 +24,6 @@ $address = isset($_POST['address']) ? trim($_POST['address']) : false;
 if (isset($_POST['submit'])) {
     $error = []; //contain error messages
 
-    
     if (!$fullname) {
         $error['fullname'] = 'Trường họ tên không được để trống';
     } else {
@@ -36,11 +35,9 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    
     if (!$token || strcmp($token, $_SESSION['token']) != 0) {
         $error['token'] = 'Phiên đăng ký không hợp lệ';
     }
-
     
     if (!$email || empty($email)) {
         $error['email'] = 'Email không được bỏ trống';
@@ -55,7 +52,6 @@ if (isset($_POST['submit'])) {
                     $error['email'] = 'Địa chỉ email này đã đăng ký tài khoản, vui lòng đăng nhập hoặc chọn email khác.';
                 }
             }
-            
         }
     }
    

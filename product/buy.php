@@ -139,7 +139,7 @@ if (isset($_POST['submit'])) {
             var_dump($e->getMessage());
             exit();
         }
-        $tpl->assign('success', true);
+        $tpl->assign('success', $db->lastInsertId());
         $cart->unset();
     } else {
         $tpl->assign('error', $error);

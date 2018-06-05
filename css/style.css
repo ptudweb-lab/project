@@ -1,4 +1,7 @@
 
+.table-borderless > thead > tr > th {
+  border-top-style: none;
+}
 .arrow-circle {
     height: 2.5rem;
     width: 2.5rem;

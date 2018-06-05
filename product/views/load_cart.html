@@ -2,11 +2,18 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            {if not isset($is_bill)}
             <th scope="col" style="width: 5%;">#</th>
             <th scope="col" style="width: 60%;">Tên sản phẩm</th>
             <th scope="col" style="width: 15%;">SL</th>
             <th scope="col" style="width: 15%;">Giá</th>
             <th scope="col" style="width: 5%;"></th>
+            {else}
+            <th scope="col" style="width: 5%;">#</th>
+            <th scope="col" style="width: 65%;">Tên sản phẩm</th>
+            <th scope="col" style="width: 15%;">SL</th>
+            <th scope="col" style="width: 15%;">Giá</th>
+            {/if}
         </tr>
     </thead>
     <tbody>
@@ -14,9 +21,15 @@
         <tr>
             <th scope="row">{$item.i}</th>
             <td><a href="{$homeurl}/product/index.php?id={$item.id}">{$item.name}</a></td>
+            {if not isset($is_bill)}
             <td><a href="#">-</a> {$item.num} <a href="#">+</a></td>
+            {else}
+            <td>{$item.num}</td>
+            {/if}
             <td>{$item.price_last}<sup>đ</sup></td>
+            {if not isset($is_bill)}
             <td><a href="#"><i class="fas fa-times text-warning"></i></td>
+            {/if}
         </tr>
         {/foreach}
         <tr>
