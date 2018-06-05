@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/css/fontawesome-fixed.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/css/style.css">
+    <link rel="shortcut icon" href="http://localhost:8080/favicon.ico" type="image/x-icon">
+    <script language="javascript" src="http://localhost:8080/js/jquery.min.js"></script>
+    <script language="javascript" src="http://localhost:8080/js/popper.min.js"></script>
+    <script language="javascript" src="http://localhost:8080/js/bootstrap.min.js"></script>
+    <script language="javascript" src="http://localhost:8080/js/script.js"></script>
+</head>
+<body>
+	<div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                                <form action="#" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-sm-12 col-md-12 col-lg-5 col-xl-5">
+                            <label for="fullname">
+                                <i class="fas fa-id-card"></i> Họ Tên: </label>
+                            <input type="text" class="form-control" name="fullname" required placeholder="Nhập họ và tên" title="Họ tên từ 6 kí tự đến 100 kí tự"
+                                value="">
+                            <small class="form-text text-muted"></small>
+                                                    </div>
+                        <div class="form-group col-sm-12 col-md-12 col-lg-2 col-xl-2">
+                            <div>
+                                <label for="sex">
+                                    <i class="fas fa-venus-mars"></i> Giới tính: </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="sex" value="m" >
+                                <label class="form-check-label" for="sex"> Nam</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="sex" value="f" >
+                                <label class="form-check-label" for="sex"> Nữ</label>
+                            </div>
+                                                    </div>
+                        <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <label for="phone">
+                                <i class="fas fa-address-book"></i> Số điện thoại:</label>
+                            <input type="text" name="phone" class="form-control" required placeholder="Nhập vào số điện thoại cá nhân của bạn" value="">
+                            <small class="form-text text-muted"></small>
+                                                    </div>
+                        <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <label for="address">
+                                <i class="fas fa-map-marker-alt"></i> Địa chỉ:</label>
+                            <input type="text" name="address" class="form-control" required placeholder="Nhập vào địa chỉ nhà hoặc cơ quan của bạn" value="">
+                            <small class="form-text text-muted"></small>
+                                                    </div>
+                        <div class="form-group col-12">
+                            <input type="hidden" name="token" value="x6ivvnVLRZM9luH%@-VA.Ncx6QW=cm!*bav">
+                                                        <button type="submit" name="submit" class="btn btn-success">Cập nhật</button>
+                        </div>                       
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
