@@ -79,7 +79,7 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    $tpl->assign('error', functions::display_error_tpl($error));
+    $tpl->assign('error', $error);
 }
 if (isset($_SESSION['token_login'])) {
     unset($_SESSION['token_login']);

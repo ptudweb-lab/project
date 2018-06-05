@@ -1,0 +1,76 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            {if isset($id)}
+            {if isset($bill)}
+            <div class="card-header">
+                <h5>Thông tin chi tiết đơn hàng</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Thông tin các sản phẩm</h6>
+                            </div>
+                            <div class="card-body p-2">
+                                {include file="../../product/views/load_cart.html"}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+
+                    </div>
+                </div>
+            </div>
+            {else}
+            <div class="alert alert-danger">Hóa đơn không tồn tại</div>
+            {/if}
+            {else}
+            <div class="card-header">
+                <h5>Danh sách đơn hàng</h5>
+            </div>
+            <div class="card-body">
+                {if not isset($bills)}
+                Danh mục rỗng
+                {else}
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width: 5%;">#</th>
+                            <th scope="col" style="width: 15%;">Họ tên</th>
+                            <th scope="col" style="width: 15%;">SĐT</th>
+                            <th scope="col" style="width: 45%;">Địa chỉ giao hàng</th>
+                            <th scope="col" style="width: 15%;">Tổng tiền</th>
+                            <th scope="col" style="width: 5%;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {foreach $bills as $item}
+                        <tr>
+                            <th scope="row">{$item.i}</th>
+                            <td>
+                                <a href="index.php?mod=bill&amp;id={$item.id}">{$item.customer_name}</a>
+                            </td>
+                            <td>
+                                {$item.customer_phone}
+                            </td>
+                            <td>
+                                {$item.customer_address}
+                            </td>
+                            <td>{$item.total_price}
+                                <sup>đ</sup>
+                            </td>
+                            <td>
+                                <a href="index.php?mod=bill&amp;act=active&amp;id={$item.id}">Duyệt</a> - <a href="index.php?mod=bill&amp;act=del&amp;id={$item.id}">x</a>
+                            </td>
+                        </tr>
+                        {/foreach}
+                    </tbody>
+                </table>
+                {/if}
+            </div>
+            {/if}
+        </div>
+    </div>
+</div>

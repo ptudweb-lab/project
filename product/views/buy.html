@@ -1,0 +1,147 @@
+{include file="../../views/header.html"} 
+<script src="js/script.js"></script>
+{if not isset($cart)}
+<div class="alert alert-danger">
+    Giỏ hàng hiện tại của bạn đang rỗng. Bạn vui lòng thêm gì đó vào giỏ và tiến hành đặt hàng lại bạn nhé!
+</div>
+{else}
+{if isset($success)}
+<div class="col">
+    <div class="alert alert-success">
+        Chúc mừng bạn đặt thành công sản phẩm! Vui lòng chờ chúng tôi duyệt đơn hàng và sẽ thông báo đến bạn sau.
+    </div>
+</div>
+{else}
+<form action="#" method="post">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mt-2">
+                        <div class="card-header">
+                            <h5>Giỏ hàng của bạn</h5>
+                        </div>
+                        <div class="card-body">
+                            {include file='load_cart.html'}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card mt-2">
+                        <div class="card-header">
+                            <h5>Phương thức thanh toán và giao hàng</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-success">Hiện tại cửa hàng chỉ hỗ trợ phương thức thanh toán COD</p>
+                            <div class="form-check">
+                                <input type="radio" name="ship_type" id="ship_type_1" class="form-check-input" value="1">
+                                <label for="ship_type_1" class="form-check-label">
+                                    Giao hàng tiêu chuẩn (phụ phí 10.000đ): Giao hàng trong vòng 1-2 ngày
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" name="ship_type" id="ship_type_2" class="form-check-input" value="2">
+                                <label for="ship_type_1" class="form-check-label">
+                                    Giao hàng miễn phí: Giao hàng trong vòng 5-6 ngày
+                                </label>
+                            </div>
+                            {if isset($error.ship_type)}
+                            <div class="text-danger">
+                                <i class="fas fa-times-circle "></i> {$error.ship_type }</div>
+                            {/if}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mt-2">
+                        <div class="card-header">
+                            <h5>Thông tin đặt hàng</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                    <label for="fullname">
+                                        <span class="text-danger">*</span> Họ Tên: </label>
+                                    <input type="text" class="form-control {if isset($error.fullname)} alert-danger {/if}" name="fullname" required placeholder="Nhập họ và tên"
+                                        title="Họ tên từ 6 kí tự đến 100 kí tự" value="{$post.fullname}"> {if isset($error.fullname)}
+                                    <div class="text-danger">
+                                        <i class="fas fa-times-circle "></i> {$error.fullname}</div>
+                                    {/if}
+                                </div>
+                                <div class="form-group col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                    <label for="phone">
+                                        <span class="text-danger">*</span> Số điện thoại:</label>
+                                    <input type="text" name="phone" class="form-control {if isset($error.phone)} alert-danger {/if}" required placeholder="Nhập số điện thoại của bạn"
+                                        value="{$post.phone}"> {if isset($error.phone)}
+                                    <div class="text-danger">
+                                        <i class="fas fa-times-circle "></i> {$error.phone}</div>
+                                    {/if}
+                                </div>
+                                <div class="form-group col-12">
+                                    <label for="email">Email:</label>
+                                    <input type="email" name="email" class="form-control {if isset($error.email)} alert-danger {/if}" required placeholder="Nhập địa chỉ email của bạn"
+                                        value="{$post.email}"> {if isset($error.email)}
+                                    <div class="text-danger">
+                                        <i class="fas fa-times-circle "></i> {$error.email}</div>
+                                    {/if}
+                                </div>
+
+                                <div class="form-group col-12">
+                                    <label for="addr">
+                                        <span class="text-danger">*</span> Địa chỉ nhận hàng:</label>
+                                    <textarea name="addr" class="form-control {if isset($error.addr)} alert-danger {/if}" id="" rows="2">{$post.addr}</textarea> {if isset($error.addr)}
+                                    <div class="text-danger">
+                                        <i class="fas fa-times-circle "></i> {$error.addr}</div>
+                                    {/if}
+                                </div>
+                                <div class="form-group col-12">
+                                    <label for="cmt">Ghi chú cho đơn hàng:</label>
+                                    <textarea name="cmt" class="form-control  {if isset($error.cmt)} alert-danger {/if}" id="" rows="2">{$post.cmt}</textarea> {if isset($error.cmt)}
+                                    <div class="text-danger">
+                                        <i class="fas fa-times-circle "></i> {$error.cmt}</div>
+                                    {/if}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card mt-2">
+                        <div class="card-header">
+                            <h5>Thông tin thanh toán</h5>
+                        </div>
+                        <div class="card-body p-2">
+                            <div class="form-row">
+                                <div class="col-auto">
+                                    <input type="text" name="discount" class="form-control" value="" placeholder="Nhập mã giảm giá">
+                                </div>
+                                <div class="col-auto">
+                                        <button type="button" id="check_discount" name="check_discount" class="btn btn-info">Áp dụng</button>
+                                </div>
+                            </div>
+                            <p>
+                                <h5 class="text-danger text-center"> Tổng tiền: <span id="total_cost">{$cost}</span> <sup>đ</sup></h5>
+                            </p>
+                            
+                        </div>
+                        <div class="card-footer text-muted">
+                            <input type="hidden" name="token" value="{$token}"> {if isset($error.token)}
+                            <div class="text-danger">
+                                <i class="fas fa-times-circle "></i> {$error.token}</div>
+                            {/if}
+                            <button type="submit" name="submit" value="submit" class="btn btn-primary float-right">Tiến hành đặt hàng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+{/if}
+{/if}
+{include file="../../views/footer.html"}

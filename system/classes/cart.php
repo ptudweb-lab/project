@@ -19,7 +19,11 @@ class cart
         } else {
             $this->data = null;
         }
-        
+    }
+
+    public function import($str)
+    {
+        $this->data = json_decode(base64_decode($str), true);
     }
 
     public function add($id, $num = 1)
@@ -83,7 +87,8 @@ class cart
         return $status;
     }
 
-    public function length() {
+    public function length()
+    {
         if (isset($this->data)) {
             return count($this->data);
         } else {
@@ -98,5 +103,9 @@ class cart
     private function save()
     {
         setcookie('cart', base64_encode(json_encode($this->data)), time() + 3 * 24 * 3600, '/', null, null, true);
+    }
+
+    public function unset() {
+        setcookie('cart', '', 0, '/', null, null, true);
     }
 }

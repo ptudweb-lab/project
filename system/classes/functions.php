@@ -24,6 +24,10 @@ class functions
         return $out;
     }
 
+    public static function money_format($number) {
+        return number_format($number, 0, '', '.');
+    }
+
     public static function checkout($str)
     {
         $str = nl2br($str);

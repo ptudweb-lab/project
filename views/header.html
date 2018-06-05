@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{$homeurl}/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{$homeurl}/css/fontawesome-fixed.css">
+    <link rel="stylesheet" type="text/css" href="{$homeurl}/css/fontawesome-all.min.css">
     <link rel="stylesheet" type="text/css" href="{$homeurl}/css/style.css">
     <link rel="shortcut icon" href="{$homeurl}/favicon.ico" type="image/x-icon">
     <script language="javascript" src="{$homeurl}/js/jquery.min.js"></script>
@@ -140,7 +140,9 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Mua ngay</button>
+                    {if $cart_length neq 0}
+                    <a href="{$homeurl}/product/buy.php" class="btn btn-primary">Đặt hàng</a>
+                    {/if}
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
                 </div>
             </div>
