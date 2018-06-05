@@ -33,4 +33,7 @@ Trang web phải đảm bảo được các mục tiêu:
 # Cài đặt và sử dụng
 
 # Nguồn tham khảo
+https://www.w3schools.com/ 
+https://www.smarty.net/crash_course 
+http://php.net/manual/en/class.pdo.php
 
