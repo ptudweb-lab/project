@@ -8,7 +8,7 @@
 define('_IN_FS', 1);
 require_once '../system/core.php';
 
-$search = isset($_GET['k']) ? trim($_GET['k']) : false;
+$search = isset($_GET['k']) ? rawurldecode(trim($_GET['k'])) : false;
 
 if ($search) {
     $tpl->assign('keyword', $search);
