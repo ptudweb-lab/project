@@ -38,7 +38,10 @@
                         {/foreach} {else} Danh sách rỗng {/if}
                     </div>
                 </li>
-                <li class="nav-item float-right">
+            </ul>
+
+            <ul class="nav navbar-nav mx-auto">
+                <li class="nav-item">
                     <form class="form-inline">
                         <input class="form-control" size="35" type="text" placeholder="Bạn muốn tìm gì?">
                         <button title="Tìm kiếm" class="btn btn-success ml-2" type="submit">
@@ -48,35 +51,40 @@
                 </li>
             </ul>
 
-            <!--Search form-->
-            <button id="show_cart" type="button" class="btn btn-warning ml-3 mr-1" data-toggle="modal" data-target="#cartContent">
-                <i class="fas fa-shopping-cart"></i>
-                {if $cart_length eq 0}
-                <span id="cart_length" class="badge badge-light">{$cart_length}</span>
-                {else}
-                <span id="cart_length" class="badge badge-danger">{$cart_length}</span>
-                {/if}
-            </button>
-            {if $is_user eq true }
-            <div class="dropdown mr-3">
-                <button type="button" class="btn btn-info text-right" id="dropdownAccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <!-- data-toggle="modal" data-target="#userModal"> -->
-                    <i class="fas fa-user"></i> Tài khoản</button>
-                <div class="dropdown-menu" aria-labelledby="dropdownAccount">
-                    {if $is_admin eq true}
-                    <a href="{$homeurl}/admin" class="dropdown-item">
-                        <span class="text-danger">Admin Panel</span>
-                    </a>
-                    {/if}
-                    <a href="#" class="dropdown-item">Profile</a>
-                    <a href="#" class="dropdown-item">Thông báo</a>
-                </div>
-            </div>
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <button id="show_cart" type="button" class="btn btn-warning ml-3 mr-1" data-toggle="modal" data-target="#cartContent">
+                        <i class="fas fa-shopping-cart"></i>
+                        {if $cart_length eq 0}
+                        <span id="cart_length" class="badge badge-light">{$cart_length}</span>
+                        {else}
+                        <span id="cart_length" class="badge badge-danger">{$cart_length}</span>
+                        {/if}
+                    </button>
+                </li>
+                <li class="nav-item">
+                    {if $is_user eq true }
+                    <div class="dropdown mr-3">
+                        <button type="button" class="btn btn-info text-right" id="dropdownAccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <!-- data-toggle="modal" data-target="#userModal"> -->
+                            <i class="fas fa-user"></i> Tài khoản</button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownAccount">
+                            {if $is_admin eq true}
+                            <a href="{$homeurl}/admin" class="dropdown-item">
+                                <span class="text-danger">Admin Panel</span>
+                            </a>
+                            {/if}
+                            <a href="#" class="dropdown-item">Profile</a>
+                            <a href="#" class="dropdown-item">Thông báo</a>
+                        </div>
+                    </div>
 
-            {else}
-            <button type="button" class="btn btn-info text-right" data-toggle="modal" data-target="#loginForm">
-                <i class="fas fa-sign-in-alt"></i> Đăng nhập</button>
-            {/if}
+                    {else}
+                    <button type="button" class="btn btn-info text-right" data-toggle="modal" data-target="#loginForm">
+                        <i class="fas fa-sign-in-alt"></i> Đăng nhập</button>
+                    {/if}
+                </li>
+            </ul>
 
 
         </div>
