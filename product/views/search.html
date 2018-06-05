@@ -1,0 +1,81 @@
+{include file="../../views/header.html"}
+
+{if isset($keyword)}
+<div class="row mt-2">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>
+                    Kết quả tìm kiếm "{$keyword}""
+                    {if isset($total)}
+                    ({$total})
+                    {/if}
+                </h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    {if not isset($products)}
+    <div class="alert">
+        <div class="alert-danger">
+            Không tìm thấy kết quả nào
+        </div>
+    </div>
+    {else}
+    {foreach $products as $product}
+    <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+        <div class="card h-100 mt-2 p-1">
+            <img class="card-img-top img-fluid" src="{$homeurl}/uploads/{$product.image}" alt="Product title">
+            <div class="card-body">
+                <h5 class="card-title">{$product.name}</h5>
+                <p class="card-text">
+                    <span class="fas fa-star star-checked"></span>
+                    <span class="fas fa-star star-checked"></span>
+                    <span class="fas fa-star star-checked"></span>
+                    <span class="fas fa-star-half star-checked"></span>
+                    <span class="fas fa-star"></span>
+                    <br/> Giá:
+                    <span class="text-danger">{$product.price_last}
+                        <sup>đ</sup>
+                    </span>
+                    <strike>{$product.price_first}
+                        <sup>đ</sup>
+                    </strike>
+                    <small class="text-success">{$product.discount}</small>
+
+                </p>
+            </div>
+            <div class="card-footer">
+                {if isset($product.added)}
+                <button class="btn btn-secondary" value="{$product.id}" id="add_cart" disabled>
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+                {else}
+                <button class="btn btn-warning" value="{$product.id}" id="add_cart">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+                {/if}
+
+                <a href="{$homeurl}/product/index.php?id={$product.id}" class="btn btn-primary float-right">
+                    Chi tiết
+                </a>
+            </div>
+        </div>
+    </div>
+    {/foreach} {/if}
+</div>
+
+{if isset($pagination)}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-footer">
+                {$pagination}
+            </div>
+        </div>
+    </div>
+</div>
+{/if}
+{/if}
+{include file="../../views/footer.html"}

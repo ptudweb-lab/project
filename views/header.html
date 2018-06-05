@@ -42,8 +42,8 @@
 
             <ul class="nav navbar-nav mx-auto">
                 <li class="nav-item">
-                    <form class="form-inline">
-                        <input class="form-control" size="35" type="text" placeholder="Bạn muốn tìm gì?">
+                    <form class="form-inline" action="{$homeurl}/product/search.php" method="GET">
+                        <input class="form-control" size="35" type="text" name="k" placeholder="Bạn muốn tìm gì?">
                         <button title="Tìm kiếm" class="btn btn-success ml-2" type="submit">
                             <i class="fas fa-search"></i>
                         </button>
